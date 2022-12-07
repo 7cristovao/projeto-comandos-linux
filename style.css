@@ -1,0 +1,28 @@
+@font-face {
+    font-family: LeagueSpartan-Bold;
+    src: url(./fonts/LeagueSpartan-Bold.otf);
+}
+@font-face {
+    font-family: Jura-DemiBold;
+    src: url(./fonts/Jura-DemiBold.otf);
+}
+body{
+    background-color: #1e1e1e;
+}
+h1, h2, h3, h4{
+    font-family: 'LeagueSpartan-Bold';
+    color:white;
+}
+code{
+    padding:10px;
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    background-color: #252525;
+    border-radius: 10px;
+}
+ul{
+    padding: 0px;
+    font-family: 'Jura-DemiBold', Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: 30px;
+}
