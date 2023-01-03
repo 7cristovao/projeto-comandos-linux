@@ -9,6 +9,58 @@
 </head>
 <body>
     <h1>Comandos do Linux</h1>
+    <h2>Guia rápido</h2>
+    <p><code>chmod</code></p>
+    <ul>Mudar permissões de arquivos</ul>
+    <p><code>tar</code></p>
+    <ul>Descompactar arquivos</ul>
+    <p><code>cd</code></p>
+    <ul>Entrar em uma pasta </ul>
+    <p><code>cd ..</code></p>
+    <ul>Sair de uma pasta</ul>
+    <p><code>date</code></p>
+    <ul>Ver a data e hora de hoje</ul>
+    <p><code>ls</code></p>
+    <ul>Listar arquivos</ul>
+    <p><code>clear</code></p>
+    <ul>Limpar tela</ul>
+    <p><code>cp</code></p>
+    <ul>Copiar arquivos</ul>
+    <p><code>rm</code></p>
+    <ul>Remover, apagar, deletar arquivos</ul>
+    <p><code>rm -R</code></p>
+    <ul>Apagar diretório</ul>
+    <p><code>nano</code></p>
+    <ul>Editar arquivos. Entrar no editor de texto</ul>
+    <p><code>exit</code></p>
+    <ul>Sair</ul>
+    <p><code>fdformat</code></p>
+    <ul>Formatar disco</ul>
+    <p><code>ip a</code></p>
+    <ul>Verificar o ip da máquina</ul>
+    <p><code>mkdir</code></p>
+    <ul>Criar pasta</ul>
+    <p><code>ls | less</code></p>
+    <ul>Listar arquivos permitindo rolamento de tela</ul>
+    <p><code>mv</code></p>
+    <ul>Mover arquivos, renomear arquivos</ul>
+    <p><code>netstat</code></p>
+    <ul>Verificar rede</ul>
+    <p><code>ping</code></p>
+    <ul>Enviar e receber dados da rede</ul>
+    <p><code>rmdir</code></p>
+    <ul>Apagar pasta</ul>
+    <p><code>time</code></p>
+    <ul>Verificar hora</ul>
+    <p><code>traceroute</code></p>
+    <ul>Verificar percurso para acessar um URL</ul>
+    <p><code>cat | less</code></p>
+    <ul>Ler arquivo, verificar arquivo, verificar conteúdo</ul>
+    <p><code>startx</code></p>
+    <ul>Iniciar o modo gráfico</ul>
+    <p><code>cp -R</code></p>
+    <ul>Copiar pasta</ul>
+    <br>
     <h2>Primeira parte</h2>
     <p><code>su -</code></p>
     <ul>Solicita a senha do super usuário</ul>
@@ -946,21 +998,285 @@
     <br>
     <p><code>which ls</code></p>
     <ul>***** Permite localizar onde o binário se encontra no sistema operacional</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
+    <br>
+    <h3>Gerenciamento de processos</h3>
+    <p><code>mc -b /etc/passwd</code></p>
+    <ul>Abre mceditor em preto e branco</ul>
+    <p><code>ps | grep</code></p>
+    <ul>Verificar processos abertos na sessão</ul>
+    <p><code>ps</code></p>
+    <ul>Mostra processos que estão abertos apenas neste terminal</ul>
+    <p><code>ps a</code></p>
+    <ul>Mostra todos os processos em execução nos terminais</ul>
+    <h4>PID (Process Identificator)</h4>
+    <ul>Buscar binários no sistema operacional</ul>
+    <p><code>echo $PATH</code></p>
+    <ul>Significa caminho</ul>
+    <ul>Lista de caminhos separados por ":"</ul>
+    <p><code>which ls</code></p>
+    <ul>Como ele achou o comando ls?</ul>
+    <ul>Primeiramente ele pesquisou no primeiro campo</ul>
+    <p><code>echo $PATH | cut -d ":" -f 1</code></p>
+    <ul>Depois ele pesquisou no segundo campo</ul>
+    <p><code>echo $PATH | cut -d ":" -f 2</code></p>
+    <ul>Então ele achou o binário, assim que encontrado ele interrompe a pesquisa</ul>
+    <ul>PATH do root é diferente (não tem games)</ul>
+    <p><code>PATH=$PATH:/usr/bin</code></p>
+    <p><code>echo $PATH</code></p>
+    <ul>Acrescenta o diretório /usr/sbin na variável PATH</ul>
+    <br>
+    <h3>Procedimento para modificar o arquivo su</h3>
+    <p><code>which su</code></p>
+    <ul>Ver onde fica o binário "su"</ul>
+    <h4>Criar no /home uma pasta /bin e no /home</h4>
+    <p><code>mkdir bin</code></p>
+    <p><code>PATH=~/bin:$PATH</code></p>
+    <p><code>echo $PATH</code></p>
+    <h4>Criar um arquivo chamado su</h4>
+    <ol>
+       <li>#!/bin/bash</li> 
+       <li>echo -n "Senha: "</li>
+       <li>read var</li>
+       <li>echo "A senha digitada foi $var"</li>
+    </ol>
+    <p><code>which su</code></p>
+    <ul>Agora vai buscar 'su' do /home</ul>
+    <br>
+    <h3>Execução de programas</h3>
+    <p><code>sleep 10</code></p>
+    <ul>Espera para retornar para linha de comando</ul>
+    <p><code>sleep 10 &</code></p>
+    <p><code>sleep 100 &</code></p>
+    <p><code>cat /proc/numero_do_PID/cmdline</code></p>
+    <p><code>jobs</code></p>
+    <ul>Exibe os programas em execução no segundo plano</ul>
+    <p><code>fg 1</code></p>
+    <ul>Traz o programa em execução para primeiro plano</ul>
+    <p>CTRL + Z<p>
+    <ul>Pára o programa em execução</ul>
+    <p><code>bg 1</code></p>
+    <ul>Joga o programa em execução parado para segundo plano</ul>
+    <p>CTRL + C</p>
+    <ul>Mata execução do programa que está no primeiro plano</ul>
+    <p><code>kill %1</code></p>
+    <ul>Mata execução do programa que está no 'job 1'</ul>
+    <p><code>ps</code></p>
+    <p><code>ps -ax</code></p>
+    <ul>Lista processos de todos os usuários</ul>
+    <p><code>ps -axu</code></p>
+    <ul>Lista também usuários</ul>
+    <ul>VS2 &#8594; tamanho virtual; RSS &#8594; tamanho residente</ul>
+    <ul>STAT &#8594; S &#8594; Soneca não interrompível, processo importante sendo executado</ul>
+    <ul>STAT &#8594; D &#8594; Entrada e saída de disco, leitura de disco</ul>
+    <ul>STAT &#8594; I &#8594; Idle ocioso</ul>
+    <ul>STAT &#8594; R &#8594; Rodando, Run</ul>
+    <ul>STAT &#8594; Z &#8594; Processo zumbi, processo que perdeu a referência do processo pai</ul>
+    <ul>STAT &#8594; X &#8594; Nunca deve ser exibido, processo que foi morto</ul>
+    <br>
+    <p><code>ps -axm</code></p>
+    <ul>Mostra procesos de memória</ul>
+    <p><code>ps -f</code></p>
+    <p><code>ps -axf</code></p>
+    <ul>Mostra os processos em árvore</ul>
+    <p><code>ps -axew</code></p>
+    <ul>Mostra as variáveis de ambiente utilizadas no comando com wrap</ul>
+    <p><code>ps ax --sort=pid</code></p>
+    <ul>Classifica por PID</ul>
+    <p><code>ps ax --sort=pid | head</code></p>
+    <p><code>ps ax --sort=rss</code></p>
+    <ul>Classifica por memória residente</ul>
+    <p><code>pss ax --sort=tty</code></p>
+    <p><code>pidof cron</code></p>
+    <ul>***** Mostra o PID do processo cron</ul>
+    <p><code>pstree</code></p>
+    <ul>Árvore de processos</ul>
+    <p><code>pstree -A</code></p>
+    <ul>Árvore de processos usando caracteres ASCII</ul>
+    <p><code>pstree -c</code></p>
+    <ul>Mostra toda estrutura  incluindo processos pai</ul>
+    <p><code>pstree -h</code></p>
+    <ul>Destaca processos pai e os antecessores</ul>
+    <p><code>pstree -h -p</code></p>
+    <ul>Exibe também o PID</ul>
+    <p><code>pstree -p -H 352</code></p>
+    <ul>Exibe um processo especial</ul>
+    <p><code>pstree -p -H 433 -u</code></p>
+    <ul>Mostra o PID do processo que está em Excel</ul>
+    <p><code>pstree -p -H 433 -g</code></p>
+    <ul>Mostra o grupo de execução</ul>
+    <br>
+    <p><code>kill [PID]</code></p>
+    <ul>Encerra o processo</ul>
+    <p><code>kill -15 [PID]</code></p>
+    <ul>Fechar de forma amigável</ul>
+    <p><code>kill -9 [PID}</code></p>
+    <ul>Mata o programa sem perguntar</ul>
+    <p><code>kill -HUP [PID}</code></p>
+    <ul>Faz o processo reler o modo de sistema operacional sem finalizar</ul>
+    <p><code>kill -1 [PID]</code></p>
+    <ul>Equivalente ao kill -HUP</ul>
+    <p><code>kill -KILL [PID]</code></p>
+    <ul>Equivalente ao kill -9</ul>
+    <p><code>kill -TERM [PID]</code></p>
+    <ul>Equivalente ao kill -15</ul>
+    <p><code>pgrep -u root sshd</code></p>
+    <ul>Lista processos do ROOT que tem SSHD</ul>
+    <p><code>pgrep sshd</code></p>
+    <ul>Pesquisa SSHD em todos os processos</ul>
+    <p><code>pkill -u usuario sleep</code></p>
+    <ul>Mata processo especificado de usuário</ul>
+    <p><code>killall -u usuario sleep</code></p>
+    <ul>Mata de acordo com o nome</ul>
+    <p><code>killall5 -9</code></p>
+    <ul>***** Mata todos os processos com ROOT</ul>
+    <ul>Perde o acesso remoto da máquina</ul>
+    <p><code>nohup sleep 200 &</code></p>
+    <ul>Protege um processo em execução para que ele não seja afetado por sinais de interrupção. Exemplo: exceto -9 e -15</ul>
+    <br>
+    <p><code>top</code></p>
+    <ul>***** Mostra estado de execução dos processos na máquina</ul>
+    <p><code>SHIFT + M</code></p>
+    <ul>Classifica por memória</ul>
+    <p><code>M</code></p>
+    <ul>Muda a barra</ul>
+    <p><code>F</code></p>
+    <ul>Traz tela descritiva. A (desce), W (sobe)</ul>
+    <p><code>Q</code></p>
+    <ul>Retorna a listagem</ul>
+    <p><code>K</code></p>
+    <ul>Pergunta qual processo quer matar</ul>
+    <p><code>D &#8594; 1</code></p>
+    <ul>Muda o delay, atualiza a cada 1 segundo</ul>
+    <p><code>SHIFT + W</code></p>
+    <ul>Salva a configuração no HOME</ul>
+    <br>
+    <p><code>top -i</code></p>
+    <ul>Ignora processos zumbis</ul>
+    <p><code>top -c</code></p>
+    <ul>Mostra linha de comando completa. Pode apertar 'c' dentro do TOP</ul>
+    <br>
+    <p><code>nice -n 10 sleep 1000</code></p>
+    <ul>Determina qual prioridade um programa ou um comando pode ser executado no sistema operacional. Varia de -20 a 19</ul>
+    <ul>Prioridades abaixo de zero são permitidas apenas para o ROOT</ul>
+    <p><code>renice -n 10 -p 597</code></p>
+    <ul>Processo será executado com prioridade nova (10)</ul>
+    <p><code>renice -n 10 -u usuario</code></p>
+    <p><code>renice -n 10 -g usuario</code></p>
+    <br>
+    <p><code>tload</code></p>
+    <ul>***** Visualização gráfica de processos. &#8594; Q para sair</ul>
+    <p><code>vmstat</code></p>
+    <ul>Visualização dos parâmetros do sistema operacional linha a linha</ul>
+    <p><code>vmstat 1</code></p>
+    <ul>Atualiza a cada 1 segundo</ul>
+    <br>
+    <h3>Multiplexador de terminais</h3>
+    <br>
+    <p><code>apt install screen</code></p>
+    <p><code>screen</code></p>
+    <ul>***** Cria várias telas dentro do mesmo terminal</ul>
+    <p><code>CTRL + A</code></p>
+    <ul>Mostra as telas, atalhos internos</ul>
+    <p><code>CTRL + A, W</code></p>
+    <ul>Mostra quantas screens tem</ul>
+    <p><code>CTRL + A, C</code></p>
+    <ul>Cria tela dentro do mesmo terminal</ul>
+    <p><code>CTRL + A, A</code></p>
+    <ul>Alterna entre as telas criadas</ul>
+    <p><code>CTRL + A, 0</code></p>
+    <ul>Vai para a screen zero</ul>
+    <p><code>CTRL + A, 1</code></p>
+    <ul>Vai para a screen um e assim por diante</ul>
+    <p><code>CTRL + A, D</code></p>
+    <ul>Detachar, desconectar da screen</ul>
+    <p><code>screen -ls</code></p>
+    <ul>Lista processos dentro da screen</ul>
+    <p><code>screen -x</code></p>
+    <ul>Reconecto na minha screen</ul>
+    <br>
+    <p><code>apt-get install tmux</code></p>
+    <p><code>tmux new</code></p>
+    <p><code>CTRL + B</code></p>
+    <ul>Mostra as telas, atalho interno</ul>
+    <p><code>CTRL + B, C</code></p>
+    <ul>Cria uma nova tela</ul>
+    <p><code>CTRL + B, 0</code></p>
+    <ul>Vai para a tela zero</ul>
+    <p><code>CTRL + B, D</code></p>
+    <ul>Desconecta</ul>
+    <br>
+    <p><code>tmux ls</code></p>
+    <ul>Lista as sessões tmux que estão criadas</ul>
+    <p><code>tmux attach</code></p>
+    <ul>Para reconectar</ul>
+    <p><code>CTRL + B, SHIFT + "</code></p>
+    <ul>Divide a tela horizontalmente</ul>
+    <p><code>CTRL + B, seta para cima</code></p>
+    <ul>Alterna entre tela</ul>
+    <p><code>CTRL + B, seta para baixo</code></p>
+    <p><code>exit</code></p>
+    <ul>Fecha a tela de baixo</ul>
+    <p><code>CTRL + B, sinal de %</code></p>
+    <ul>Divide a tela verticalmente</ul>
+    <p><code>CTRL + B, aspas duplas</code></p>
+    <ul>Redivide a tela horizontalmente</ul>
+    <p><code>CTRL + B, seta para esquerda</code></p>
+    <ul>Alterna tela</ul>
+    <h2>Comandos do Linux para Windows</h1>
+    <h2>Comandos do Linux para MS-DOS</h1>
+    <p><code>chmod</code></p>
+    <ul>attrib</ul>
+    <p><code>tar</code></p>
+    <ul>backup </ul>
+    <p><code>cd</code></p>
+    <ul>cd </ul>
+    <p><code>cd ..</code></p>
+    <ul>cd..</ul>
+    <p>cd /</p>
+    <ul>cd\</ul>
+    <p><code>date</code></p>
+    <ul>date</ul>
+    <p><code>ls</code></p>
+    <ul>dir</ul>
+    <p><code>clear</code></p>
+    <ul>cls </ul>
+    <p><code>cp</code></p>
+    <ul>copy</ul>
+    <p><code>rm</code></p>
+    <ul>del</ul>
+    <p><code>rm -R</code></p>
+    <ul>deltree</ul>
+    <p><code>nano</code></p>
+    <ul>edit</ul>
+    <p><code>exit</code></p>
+    <ul>exit</ul>
+    <p><code>fdformat</code></p>
+    <ul>format</ul>
+    <p><code>ip a</code></p>
+    <ul>ipconfig</ul>
+    <p><code>mkdir</code></p>
+    <ul>md</ul>
+    <p><code>ls | more</code></p>
+    <ul>dir /p</ul>
+    <p><code>mv</code></p>
+    <ul>move</ul>
+    <p><code>mv</code></p>
+    <ul>rename</ul>
+    <p><code>netstat</code></p>
+    <ul>netstat</ul>
+    <p><code>ping</code></p>
+    <ul>ping</ul>
+    <p><code>rmdir</code></p>
+    <ul>rmdir</ul>
+    <p><code>time</code></p>
+    <ul>time</ul>
+    <p><code>traceroute</code></p>
+    <ul>tracetr</ul>
+    <p><code>cat | less</code></p>
+    <ul>type</ul>
+    <p><code>startx</code></p>
+    <ul>win</ul>
+    <p><code>cp -R</code></p>
+    <ul>xcopy</ul>
 </body>
 </html>
