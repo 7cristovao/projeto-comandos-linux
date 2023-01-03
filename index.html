@@ -8,1275 +8,1459 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Comandos do Linux</h1>
-    <h2>Guia rápido</h2>
-    <p><code>chmod</code></p>
-    <ul>Mudar permissões de arquivos</ul>
-    <p><code>tar</code></p>
-    <ul>Descompactar arquivos</ul>
-    <p><code>cd</code></p>
-    <ul>Entrar em uma pasta </ul>
-    <p><code>cd ..</code></p>
-    <ul>Sair de uma pasta</ul>
-    <p><code>date</code></p>
-    <ul>Ver a data e hora de hoje</ul>
-    <p><code>ls</code></p>
-    <ul>Listar arquivos</ul>
-    <p><code>clear</code></p>
-    <ul>Limpar tela</ul>
-    <p><code>cp</code></p>
-    <ul>Copiar arquivos</ul>
-    <p><code>rm</code></p>
-    <ul>Remover, apagar, deletar arquivos</ul>
-    <p><code>rm -R</code></p>
-    <ul>Apagar diretório</ul>
-    <p><code>nano</code></p>
-    <ul>Editar arquivos. Entrar no editor de texto</ul>
-    <p><code>exit</code></p>
-    <ul>Sair</ul>
-    <p><code>fdformat</code></p>
-    <ul>Formatar disco</ul>
-    <p><code>ip a</code></p>
-    <ul>Verificar o ip da máquina</ul>
-    <p><code>mkdir</code></p>
-    <ul>Criar pasta</ul>
-    <p><code>ls | less</code></p>
-    <ul>Listar arquivos permitindo rolamento de tela</ul>
-    <p><code>mv</code></p>
-    <ul>Mover arquivos, renomear arquivos</ul>
-    <p><code>netstat</code></p>
-    <ul>Verificar rede</ul>
-    <p><code>ping</code></p>
-    <ul>Enviar e receber dados da rede</ul>
-    <p><code>rmdir</code></p>
-    <ul>Apagar pasta</ul>
-    <p><code>time</code></p>
-    <ul>Verificar hora</ul>
-    <p><code>traceroute</code></p>
-    <ul>Verificar percurso para acessar um URL</ul>
-    <p><code>cat | less</code></p>
-    <ul>Ler arquivo, verificar arquivo, verificar conteúdo</ul>
-    <p><code>startx</code></p>
-    <ul>Iniciar o modo gráfico</ul>
-    <p><code>cp -R</code></p>
-    <ul>Copiar pasta</ul>
-    <br>
-    <h2>Primeira parte</h2>
-    <p><code>su -</code></p>
-    <ul>Solicita a senha do super usuário</ul>
-    <p><code>lsb_release -a</code></p>
-    <ul>Mostra a versão do Linux que está instalada</ul>
-    <p><code>apt install coreutils bsdutils bsdmainutils net-tools tree man-db</code></p>
-    <ul>Instala pacotes essenciais</ul>
-    <h2>Segunda parte</h2>
-    <p><code>ssh usuario@192.168.1.1</code>
-    <ul>Acessa remoto e pede login</ul></p>
-    <p><code>ip a</code></p>
-    <ul>Mostra as informações das interfaces de rede</ul>
-    <p><code>cat /etc/debian_version</code></p>
-    <ul>Mostra a versão do Debian</ul>
-    <p><code>pwd</code></p>
-    <ul>Mostra a pasta que está. Exemplo: /home/usuario</ul>
-    <p><code>su - root</code></p>
-    <ul>Solicita a senha do root</ul>
-    <p><code>pwd</code></p>
-    <ul>Mostra a pasta que está. Exemplo: /root</ul>
-    <p><code>cd</code></p>
-    <ul>Sozinho vai direto para o diretório do root</ul>
-    <p><code>cd -</code></p>
-    <ul>Voltou para o último diretório</ul>
-    <p><code>cd ~</code></p>
-    <ul>Vai para o diretório home do usuário</ul>
-    <p><code>ls -lha</code></p>
-    <ul>Lista arquivos e pastas</ul>
-    <p><code>ls -a</code></p>
-    <ul>Parâmetro -a serve para listar arquivos ocultos</ul>
-    <p><code>ls -all</code></p>
-    <ul>Lista todos os arquivos</ul>
-    <p><code>ls -l</code></p>
-    <ul>Lista mais detalhes sobre arquivos</ul>
-    <p><code>ls -al</code></p>
-    <p><code>ls -h</code></p>
-    <ul>Parâmetro headable</ul>
-    <p><code>ls -alh</code></p>
-    <ul>Legível para humanos</ul>
-    <br>
-    <p><code>clear</code></p>
-    <ul>Limpa a tela</ul>
-    <p><code>CTRL + L</code></p>
-    <ul>Atalho também serve para limpar a tela</ul>
-    <h3>Modelos de Programas de Shell:</h3>
-    <h3><ul>bash</ul><ul>ksh</ul><ul>pdksh</ul><ul>zsh</ul></h3>
-    <p><code></code></p>
-    <h2>Outros comandos</h2>
-    <ul>Seta para cima: traz histórico dos últimos comandos digitados</ul>
-    <p><code>history</code></p>
-    <ul>Histórico de comandos digitados</ul>
-    <p><code>bash</code></p>
-    <p><code>cat /etc/shells</code></p>
-    <p><code>exit</code></p>
-    <ul>Sai da sessão</ul>
-    <p><code>bash</code></p>
-    <ul>CTRL + D</ul>
-    <ul>Sai do bash</ul>
-    <p><code>ls -lha</code></p>
-    <ul>drwx ('d' significa diretório)</ul>
-    <ul>referência ao diretório atual usa-se um ponto</ul>
-    <ul>exemplo: ./arquivo</ul>
-    <ul>referência ao diretório anterior se usa ponto ponto</ul>
-    <ul>exemplo: ../arquivo</ul>
-    <p><code>cd ..</code></p>
-    <ul>Volta para uma pasta acima</ul>
-    <p><code>cd ../../../../</code></p>
-    <ul>Volta para quatro pastas anteriores</ul>
-    <p><code>cd /etc</code></p>
-    <ul>Então aperte TAB</ul>
-    <ul>ou então aperte 2 vezes o TAB</ul>
-    <h3>Definição de arquivo</h3>
-    <h3>Definição de diretório</h3>
-    <h3>Caminho relativo</h3>
-    <h3>Caminho absoluto</h3>
-    <p><code>cd /</code></p>
-    <ul>Vai para o diretório raiz</ul>
-    <p><code>ls</code></p>
-    <ul>Lista arquivos ou pastas</ul>
-    <p><code>cd root</code></p>
-    <ul>Acessa o diretório root</ul>
-    <p><code>pwd</code></p>
-    <h3>Linux Standard Base - LSB</h3>
-    <h3>Filesystem Hierarchy Standard - FHS</h3>
-    <ul>Versão 1.0 é de 1994</ul>
-    <ul>Versão 3.0 é a de 2022</ul>
-    <p><code>cd /bin</code></p>
-    <ul>Pasta de binários do sistema</ul>
-    <ul>São os arquivos executáveis (comandos)</ul>
-    <ul>Uso universal</ul>
-    <ul>Para rolar a tela use SHIFT + PageUp, SHIFT + PageDown ou Scroll do mouse</ul>
-    <p><code>ls -lha | grep ls</code></p>
-    <ul>*****</ul>
-    <p><code>cd boot</code></p>
-    <ul>Iniciação do sistema</ul>
-    <ul>Grub</ul>
-    <ul>vmlinuz* é o kernel do linux</ul>
-    <p><code>cd /dev</code></p>
-    <ul>Dispositivos / arquivos que simbolizam dispositivos</ul>
-    <p><code>ls -lha | more</code></p>
-    <ul>Melhora a rolagem da tela</ul>
-    <p><code>ls -lha | less</code></p>
-    <ul>***** Melhora a rolagem da tela</ul>
-    <h3>Partições</h3>
-    <ul>sda, significa SATA disco</ul>
-    <ul>sda1, partição primária</ul>
-    <ul>sda2, partição primária</ul>
-    <ul>sda5, partição lógica</ul>
-    <br>
-    <ul>hda, ATA disco</ul>
-    <br>
-    <ul>Partições primárias, máximo 4 partições</ul>
-    <ul>Partições lógicas, abre mão de uma lógica e abre extendidas, limite 12</ul>
-    <br>
-    <ul>sdc6, terceiro disco, segunda partição lógica</ul>
-    <ul>sdd2, quarto disco, segunda partição primária</ul>
-    <ul>sdb9, segundo disco, quinta partição lógica</ul>
-    <br>
-    <ul>b - Dispositivo de Bloco, armazena informação</ul>
-    <ul>c - Dispositivo de Caracter, recebe e envia informação</ul>
-    <ul>d - Diretório</ul>
-    <ul>l - Link simbólico</ul>
-    <ul>tty1, significa terminal, CTRL + ALT + F1</ul>
-    <ul>tty2, significa terminal, CTRL + ALT + F2</ul>
-    <ul>tty3, significa terminal, CTRL + ALT + F3</ul>
-    <ul>tty4, significa terminal, CTRL + ALT + F4</ul>
-    <ul>tty5, significa terminal, CTRL + ALT + F5</ul>
-    <ul>lp, significa porta de impressora, LPT1</ul>
-    <ul>ttys1, significa porta de comunicação, COM1</ul>
-    <ul>psaux, significa mouse</ul>
-    <ul>net, significa rede</ul>
-    <br>
-    <p><code>cat /dev/sda</code></p>
-    <ul>Mostra arquivo em linguagem de máquina</ul>
-    <p><code>df -h</code></p>
-    <ul>*****</ul>
-    <p><code>cd /etc</code></p>
-    <ul>Arquivos de configuração</ul>
-    <p><code>ls -lha hostname</code></p>
-    <ul>Lista o arquivo hostname dentro da pasta /etc</ul>
-    <p><code>cd /etc/network</code></p>
-    <ul>Configurações da rede</ul>
-    <ul>Arquivo interfaces.d tem as configurações de rede</ul>
-    <p><code>cat interfaces.d</code></p>
-    <ul>Exibe o arquivo interfaces.d</ul>
-    <p><code>cd /etc</code></p>
-    <ul>Volta para a pasta /etc</ul>
-    <p><code>cat motd</code></p>
-    <ul>Exibe mensagem do dia</ul>
-    <ul>motd significa 'message of the day'</ul>
-    <p><code>echo "CONTEUDO NOVO" > /etc/motd</code></p>
-    <ul>Substitui conteúdo do arquivo</ul>
-    <br>
-    <p><code>cd /home</code></p>
-    <ul>Diretórios de cada usuário</ul>
-    <ul>initrd.img, imagem de INIT</ul>
-    <br>
-    <p><code>cd /lib</code></p>
-    <ul>Bibliotecas, equivalente aos DLL do Win</ul>
-    <ul>São comuns extensões .so .versão</ul>
-    <p><code>cd /lib/modules/5.10.0-19-amd64/kernel/drivers</code></p>
-    <ul>Drivers (Kernel)</ul>
-    <p><code>cd /media</code></p>
-    <ul>Ponto de montagem, pendrive</ul>
-    <p><code>cd /mnt</code></p>
-    <ul>Ponto de montagem temporário, arquivos ISO</ul>
-    <p><code>cd /opt</code></p>
-    <ul>Pasta temporária</ul>
-    <p><code>cd /proc</code></p>
-    <ul>File System Virtual, informações sobre a máquina, benchmarking</ul>
-    <p><code>cat cpuinfo</code></p>
-    <p><code>cat meminfo</code></p>
-    <p><code>cat uptime</code></p>
-    <p><code>cat swaps</code></p>
-    <br>
-    <p><code>cd /root</code></p>
-    <ul>Exclusivo do root, HOME do root</ul>
-    <p><code>cd /run</code></p>
-    <ul>Traz tudo que está rodando na máquina (outra pasta com arquivos temporários)</ul>
-    <p><code>df -h</code></p>
-    <p><code>cd /sbin</code></p>
-    <ul>Arquivos executáveis do super usuário</ul>
-    <ul>Exemplos: useradd, userdel, usermod, swapon, swapoff</ul>
-    <ul>shutdown, runuser, sulogin, pwconv, pwunconv</ul>
-    <ul>***** mkfs (para formatar)</ul>
-    <p><code>cd /srv</code></p>
-    <ul>Dados estáticos: HTTP, FTP, Apache, Repositórios Git, Web Server, Script</ul>
-    <p><code>cd /sys</code></p>
-    <ul>Informação do sistema (hardware)</ul>
-    <ul>Kernel, devices, drivers</ul>
-    <p><code>cd /tmp</code></p>
-    <ul>Conteúdo apaga quando reboota</ul>
-    <p><code>cd /usr</code></p>
-    <ul>Segunda estrutura de diretórios</ul>
-    <ul>Binários não essenciais para o sistema</ul>
-    <ul>Arquivos executáveis não obrigatórios</ul>
-    <ul>Pasta include (cabeçalhos em C)</ul>
-    <ul>Pasta src (código fonte do Kernel)</ul>
-    <ul>Pasta X11R6 (modo gráfico)</ul>
-    <p><code>cd /usr/local</code></p>
-    <ul>Terceira hierarquia, estrutura de diretórios</ul>
-    <ul>Nada que você vai compartilhar em rede</ul>
-    <p><code>cd /usr/bin</code></p>
-    <ul>***** Pasta dos executáveis do sistema para o usuário</ul>
-    <p><code>cd /var</code></p>
-    <ul>Pasta do www</ul>
-    <ul>/var/www</ul>
-    <ul>Instalação pelo Apache</ul>
-    <p><code>cd /var/logs</code></p>
-    <ul>Logs do sistema</ul>
-    <p><code>cd /var/cache</code></p>
-    <ul>Cache</ul>
-    <p><code>cd /var/lib</code></p>
-    <ul>***** Informação do estado dos dados</ul>
-    <p><code>cd /var/lock</code></p>
-    <ul>Executa comandos e trava tipo apt-get</ul>
-    <p><code>cd /var/mail</code></p>
-    <p><code>cd /var/opt</code></p>
-    <p><code>cd /var/run</code></p>
-    <ul>Informação dos processos</ul>
-    <p><code>halt</code></p>
-    <ul>Desligar</ul>
-    <p><code>reboot</code></p>
-    <ul>Reiniciar</ul>
-    <p><code>shutdown -h now</code></p>
-    <ul>Desligar agora</ul>
-    <p><code>shutdown -r now</code></p>
-    <ul>Reiniciar agora</ul>
-    <p><code>poweroff</code></p>
-    <ul>Desliga</ul>
-    <p><code>init 0</code></p>
-    <ul>Desliga</ul>
-    <p><code>init 6</code></p>
-    <ul>Reinicia</ul>
-    <p><code>shutdown --help</code></p>
-    <ul>Ajuda do comando shutdown</ul>
-    <p><code>shutdown -h +30</code></p>
-    <ul>Programa o desligamento para 30 minutos</ul>
-    <p><code>shutdown -c</code></p>
-    <ul>Cancela o desligamento programado</ul>
-    <p><code>shutdown -r +30</code></p>
-    <ul>Programa o reinício da máquina em 30 minutos</ul>
-    <ul>Programa desliga e manda mensagem</ul>
-    <br>
-    <h2>Terceira parte</h2>
-    <h3>Comandos internos e externos</h3>
-    <p><code>echo "teste"</code></p>
-    <ul>Exibe mensagem na tela</ul>
-    <p><code>alias ls='ls -s'</code></p>
-    <ul>Cria apelido de um comando para outro comando</ul>
-    <p><code>which ls</code></p>
-    <ul>Identifica onde está o binário na sua máquina</ul>
-    <p><code>man builtins</code></p>
-    <ul>Mostra os comandos contidos dentro do interpretador de comandos bash</ul>
-    <p><code>su - root</code></p>
-    <ul>Faz login como root</ul>
-    <h3>Como criar um shell script</h3>
-    <p><code>cd /usr/local/bin</code></p>
-    <p><code>vi alias</code></p>
-    <ul>Entra no editor de texto chamado vi</ul>
-    <h4>Dentro do VI escreva:</h4>
-    <ul>#!/bin/sh</ul>
-    <ul>echo "Não execute este script"</ul>
-    <h4>Aperte ESC</h4>
-    <h4>Tecle :x e aperte ENTER para salvar e sair do VI</h4>
-    <h3>No shell saindo do VI</h3>
-    <p><code>exit</code></p>
-    <ul>Sai do ROOT</ul>
-    <p><code>alias</code></p>
-    <ul>Traz alias embutido no shell</ul>
-    <p><code>/usr/local/bin/alias</code></p>
-    <ul>Executa o alias criado por nós se houver</ul>
-    <ul>Se não houver autorização do ROOT, o sistema relata um problema de segurança no arquivo sudoers</ul>
-    <p><code>ls</code></p>
-    <ul>Lista arquivos</ul>
-    <p><code>touch arquivo</code></p>
-    <ul>Comando cria arquivo vazio</ul>
-    <p><code>ls -a</code></p>
-    <ul>Lista tudo</ul>
-    <p><code>ls -A</code></p>
-    <ul>Lista sem listar diretório atual e nível anterior</ul>
-    <p><code>ls -B</code></p>
-    <ul>Não lista os arquivos com sinal ~ no final</ul>
-    <ul>O til significa que é um arquivo de backup</ul>
-    <ul>backup~</ul>
-    <p><code>mkdir Pasta1</code></p>
-    <ul>Comando cria uma pasta vazia</ul>
-    <ul>Criar pasta vazia</ul>
-    <ul>Criar diretório vazio</ul>
-    <p><code>ls --color=auto</code></p>
-    <p><code>ls --color=always</code></p>
-    <p><code>ls --color=never</code></p>
-    <p><code>ls Pasta1</code></p>
-    <ul>Não vai exibir nada porque não tem pasta criada</ul>
-    <p><code>touch Pasta1/arquivo1_pasta1</code></p>
-    <p><code>ls Pasta1</code></p>
-    <ul>Lista o arquivo</ul>
-    <p><code>ls Pasta1 Pasta2</code></p>
-    <ul>Lista as duas pastas ao mesmo tempo</ul>
-    <p><code>ls -d Pasta1</code></p>
-    <ul>Lista apenas nome da pasta</ul>
-    <p><code>ls -l</code></p>
-    <ul>Traz detalhamento da listagem dos arquivos nesta ordem:</ul>
-    <ul>Permissões, dono, grupo, tamanho, data da última alteração</ul>
-    <p><code>echo conteudo > teste</code></p>
-    <ul>Joga conteúdo no arquivo chamado teste</ul>
-    <p><code>ls -l --color=auto</code></p>
-    <p><code>ls -f</code></p>
-    <ul>Não classifica a listagem (ordem de criação)</ul>
-    <p><code>ls -F</code></p>
-    <ul>Se for pasta põe /</ul>
-    <ul>Se for socket coloca =</ul>
-    <ul>Se for link simbólico @</ul>
-    <ul>Se for executável ou binário *</ul>
-    <p><code>chmod 755 arquivo</code></p>
-    <ul>Altera permissão de execução</ul>
-    <p><code>ls -l -G</code></p>
-    <ul>Exibe só a coluna do dono do arquivo</ul>
-    <p><code>ls -lG</code></p>
-    <h3>Definição parâmetro extenso | parâmetro curto</h3>
-    <p><code>ls -a</code></p>
-    <ul>Lista diretório atual, anterior e arquivos ocultos</ul>
-    <p><code>ls -ln</code></p>
-    <p><code>ls -n</code></p>
-    <ul>Pega nome do dono e grupo, converte tudo para id unix</ul>
-    <ul>Lista em formato numérico</ul>
-    <p><code>ls -L</code></p>
-    <ul>Lista os apontamentos do link simbólico</ul>
-    <p><code>ls -l -o</code></p>
-    <ul>Exibe apenas o dono</ul>
-    <p><code>ls -g -l</code></p>
-    <ul>Exibe apenas o grupo</ul>
-    <p><code>ls -l -p</code></p>
-    <ul>Faz o que faz o -F mas não inclui os arquivos executáveis</ul>
-    <ul>Só lista o barra das pastas</ul>
-    <p><code>ls -t</code></p>
-    <p><code>ls -lt</code></p>
-    <ul>Ordena os arquivos por data (mais novos para mais antigos)</ul>
-    <p><code>ls -latr</code></p>
-    <ul>Lista arquivos do mais antigo para o mais novo</ul>
-    <p><code>ls -r</code></p>
-    <ul>O parâmetro -r reverte a lista</ul>
-    <p><code>ls -lac</code></p>
-    <ul>O parâmetro 'c' classifica pela data da alteração</ul>
-    <p><code>ls -lax</code></p>
-    <ul>O parâmetro 'x' classifica pela extensão</ul>
-    <p><code>ls -lXr</code></p>
-    <ul>r reverte</ul>
-    <p><code>ls -lXR</code></p>
-    <ul>O parâmetro 'R' maiúsculo serve para lista recursiva (pastas)</ul>
-    <p><code>ls /bin</code></p>
-    <ul>Lista a pasta</ul>
-    <p><code>ls /bin -F</code></p>
-    <ul>Lista o tipo</ul>
-    <p><code>ls /bin -F --color=auto</code></p>
-    <ul>Lista o tipo e põe cores</ul>
-    <p><code>mkdir -p Diretorio1/Diretorio2/Diretorio121</code></p>
-    <ul>***** Cria diretórios dentro de diretórios</ul>
-    <p><code>rmdir</code></p>
-    <ul>Só remove pasta vazia</ul>
-    <p><code>rmdir -p Diretorio1/Diretorio2/Diretorio121</code></p>
-    <ul>Remove caminho</ul>
-    <p><code>cat arquivo</code></p>
-    <ul>Visualiza conteúdo do arquivo, equivalente 'type' do win</ul>
-    <p><code>cat -r arquivo</code></p>
-    <ul>Exibe números das linhas</ul>
-    <p><code>cat -s arquivo</code></p>
-    <ul>Oculta linha em branco repetidas</ul>
-    <p><code>cat -b arquivo</code></p>
-    <ul>Enumera apenas as linhas que contém um conteúdo</ul>
-    <p><code>cat -E arquivo</code></p>
-    <ul>Exibe um sifrão em cada final de linha</ul>
-    <p><code>cat -T arquivo</code></p>
-    <ul>TABs são convertidos para ^I</ul>
-    <p><code>zcat arquivo.gz</code></p>
-    <ul>Visualiza arquivos compactados com extensão gz</ul>
-    <ul>Evita descompactar o arquivo para ver o conteúdo</ul>
-    <p><code>bzcat arquivo.bz2</code></p>
-    <p><code>xzcat arquivo.xz</code></p>
-    <p><code>tac arquivo</code></p>
-    <ul>Exibe da última linha para a primeira</ul>
-    <p><code>tac -s a arquivo</code></p>
-    <ul>Define string 'a' como quebra de linha e exibe o arquivo</ul>
-    <p><code>rm arquivo</code></p>
-    <ul>***** Apaga arquivo</ul>
-    <p><code>rm -R Pasta</code></p>
-    <ul>***** Apaga pasta</ul>
-    <p><code>rm -r Pasta</code></p>
-    <ul>Exige confirmação para remover</ul>
-    <p><code>rm -rf Pasta</code></p>
-    <ul>Remove sem perguntar</ul>
-    <p><code>rm -i pasta</code></p>
-    <p><code>rm -i -f pasta</code></p>
-    <ul>Remove sem perguntar</ul>
-    <p><code>rm -rf *</code></p>
-    <ul>Remove todos os arquivos da pasta</ul>
-    <p><code>rm -f .arquivooculto</code></p>
-    <ul>Remove arquivo oculto forçado</ul>
-    <p><code>rm -- -</code></p>
-    <p><code>rm '-'</code></p>
-    <ul>Remove arquivo iniciado com '-'</ul>
-    <ul>Entende que '-' não é um parâmetro</ul>
-    <ul>Vale também para '*' e '?'</ul>
-    <p><code>cp [origem] [destino]</code></p>
-    <ul>Copia arquivos</ul>
-    <p><code>cp -vfr * diretorio1/</code></p>
-    <ul>***** --verbose --forçado e recursivo</ul>
-    <p><code>cp -R</code></p>
-    <ul>***** Copia também dispositivos especiais e FIFOs, sockets, etc</ul>
-    <p><code>cp -r</code></p>
-    <ul>Sintaxe a mesma, só não copia os especiais</ul>
-    <p><code>cp -vs aaa zzz</code></p>
-    <ul>Cria link simbólico nos arquivos</ul>
-    <p><code>cp -u</code></p>
-    <ul>***** Torna a cópia repetitiva de um diretório [origem] [destino] mais rápida</ul>
-    <p><code>cp -x</code></p>
-    <p><code>cp -vxr</code></p>
-    <ul>Exclui partição do sistema para copiar</ul>
-    <p><code>cp -a</code></p>
-    <p><code>cp -d</code></p>
-    <p><code>cp -dpR</code></p>
-    <ul>Copia migrando de um ponto A para um ponto B</ul>
-    <p><code>mv arquivo_antigo arquivo_novo</code></p>
-    <ul>Copia apagando a origem</ul>
-    <ul>Renomeia arquivo</ul>
-    <ul>Move arquivo</ul>
-    <p><code>mv -i</code></p>
-    <ul>Pergunta se quer substituir o arquivo</ul>
-    <ul>Pergunta se quer sobrescrever</ul>
-    <h3>mv tem mesmos parâmetros de cp</h3>
-    <p><code>mv -u</code></p>
-    <ul>***** Move arquivos mais novos ou com mesma data de modificação</ul>
-    <ul>Só move quando a data for mais nova que o destino</ul>
-    <br>
-    <h2>Quarta parte</h2>
-    <h3>Curingas</h3>
-    <ul>* significa todos</ul>
-    <ul>? significa um caracter</ul>
-    <ul>[a-z] significa um padrão (intervalo)</ul>
-    <ul>[sa] significa string</ul>
-    <ul>^ significa não (inverter)</ul>
-    <ul># significa comentário</ul>
-    <ul>Exemplo:</ul>
-    <p><code>ls x[za, zm]</code></p>
-    <br>
-    <h3>Comandos</h3>
-    <p><code>date</code></p>
-    <p><code>date -u</code></p>
-    <ul>Mostra o horário no fuso horário de Greenwich</ul>
-    <ul>GMT, UTC</ul>
-    <p><code>date -s</code></p>
-    <ul>Ajusta hora:minutos</ul>
-    <ul>hh:mm</ul>
-    <p><code>date mmddhh''aaaa</code></p>
-    <ul>' neste comando significa minutos</ul>
-    <p><code>mmddhh''aaaass</code></p>
-    <ul>mm significa mês</ul>
-    <ul>dd significa dia</ul>
-    <ul>hh significa hora</ul>
-    <ul>'' significa minuto</ul>
-    <ul>aaaa significa ano</ul>
-    <ul>ss significa segundo</ul>
-    <p><code>hwclock --systohc</code></p>
-    <ul>salva horário</ul>
-    <p><code>date +%d</code></p>
-    <p><code>date +%d%Y</code></p>
-    <p><code>date +%d%y</code></p>
-    <p><code>date +%d-%y</code></p>
-    <p><code>date +%d-%y-%m</code></p>
-    <p><code>date +%d-%m-Y</code></p>
-    <p><code>date +%d-%m-%Y</code></p>
-    <p><code>date +"%d-%m-%Y %T"</code></p>
-    <ul>YT traz hora completa</ul>
-    <p><code>date +"%d"</code></p>
-    <p><code>date +"%d %Y"</code></p>
-    <p><code>date "%d %y %j"</code></p>
-    <ul>j mostra número do dia no ano, 0 a 365</ul>
-    <p><code>date "%d %r"</code></p>
-    <ul>Mostra hora completa</ul>
-    <p><code>date "%d %r %p"</code></p>
-    <ul>Mostra hora no formato americano</ul>
-    <br>
-    <p><code>date --date='01234567890'</code></p>
-    <ul>UNIX time</ul>
-    <p><code>date --date='01'</code></p>
-    <p><code>date -u --date='01'</code></p>
-    <br>
-    <p><code>df</code></p>
-    <ul>Mostra o espaço livre em cada partição montada (em blocos)</ul>
-    <p><code>df -h</code></p>
-    <ul>Mostra em megas, gigas</ul>
-    <p><code>df -H</code></p>
-    <ul>Ao invés de blocos de 1024, utiliza blocos de 1000 (comercial)</ul>
-    <p><code>df -l</code></p>
-    <ul>Lista somente sistema de arquivos locais (não exibe via rede)</ul>
-    <p><code>df -m</code></p>
-    <ul>Saída direta em megabytes</ul>
-    <p><code>df -a</code></p>
-    <ul>Inclui pseudofilesystems do unix</ul>
-    <p><code>df -i</code></p>
-    <ul>Lista os inodes</ul>
-    <br>
-    <ul>/dev/shm e /run/lock</ul>
-    <ul>Dados de sessões de login</ul>
-    <ul>/dev</ul>
-    <ul>Sistema de arquivos pseudofs</ul>
-    <ul>/sys/fs/group</ul>
-    <ul>Limitação e gerenciamento de recursos da máquina</ul>
-    <ul>Limitação de recursos de processos</ul>
-    <ul>Extensivamente utilizado pelo doc Kubernetes</ul>
-    <ul>/run/user/1000</ul>
-    <ul>Alguns dados atuais da sessão de usuário</ul>
-    <br>
-    <p><code>id</code></p>
-    <ul>Traz dados da sessão logada</ul>
-    <p><code>mount</code></p>
-    <ul>***** também pode montar discos removíveis</ul>
-    <p><code>df -T</code></p>
-    <ul>Sistema de arquivos utilizados em cada partição</ul>
-    <p><code>df -Th</code></p>
-    <ul>***** Lista sistema de arquivos legíveis para humanos</ul>
-    <p><code>df -t</code></p>
-    <ul>Lista apenas sistema de arquivos que for especificado</ul>
-    <ul>Exemplos:</ul>
-    <p><code>df -Th -t ext4</code></p>
-    <p><code>df -aTh -t cgroup</code></p>
-    <p><code>df -P</code></p>
-    <ul>Saída em formato POSIX</ul>
-    <br>
-    <p><code>ln /bin/ls ls2</code></p>
-    <ul>Cria link de arquivo para arquivo (hard links)</ul>
-    <p><code>ls -s</code></p>
-    <ul>Cria link de arquivo para diretório</ul>
-    <ul>Resultado: arquivo convencional ou link simbólico</ul>
-    <p><code>ln -s /bin/ls ls-link</code></p>
-    <ul>Cria link simbolico para arquivo</ul>
-    <p><code>cp -l</code></p>
-    <ul>Ao invés de copiar os arquivos, cria um hardlink para eles</ul>
-    <ul>Exemplo:</ul>
-    <p><code>cp -rvl /usr /tmp/copia-usr</code></p>
-    <br>
-    <p><code>du</code></p>
-    <ul>Exibe ocupação do tamanho de cada arquivo na nossa partição montada</ul>
-    <p><code>du -Hs</code></p>
-    <ul>Exibe em formato legíveis para humanos (blocos de 1000)</ul>
-    <p><code>du -hs</code></p>
-    <ul>Exibe em blocos de 1024</ul>
-    <p><code>du -s</code></p>
-    <ul>Conta tudo e exibe sumarizado</ul>
-    <p><code>du -ks</code></p>
-    <ul>Exibe em KiloBytes</ul>
-    <p><code>du -ms</code></p>
-    <ul>Exibe em MegaBytes</ul>
-    <p><code>du -H</code></p>
-    <p><code>du -h</code></p>
-    <p><code>du -hc</code></p>
-    <ul>Adiciona o total no final</ul>
-    <br>
-    <p><code>find</code></p>
-    <ul>Localiza arquivos e diretórios no sistema</ul>
-    <p><code>find . -name ls</code></p>
-    <ul>*****</ul>
-    <p><code>sudo apt-get install mc</code></p>
-    <ul>Instala o editor de texto MC</ul>
-    <p><code>find . -type d -name mc</code></p>
-    <ul>Traz apenas as pastas</ul>
-    <p><code>find . -type f -name mc</code></p>
-    <ul>Traz apenas arquivos</ul>
-    <p><code>find /var -type f -name mc</code></p>
-    <ul>Pesquisa dentro de /var</ul>
-    <p><code>find /usr -maxdepth 2 -type f -name mc</code></p>
-    <ul>Dois níveis</ul>
-    <p><code>find /usr -mindepth 4 -type f -name mc</code></p>
-    <ul>Traz binários em 4 subpastas</ul>
-    <p><code>find /etc -mtime -1</code></p>
-    <ul>***** Traz todos arquivos modificados a 1 dia atrás</ul>
-    <ul>CREATED, MODIFIED, ACCESS</ul>
-    <p><code>find /etc -amin -10</code></p>
-    <p><code>find /etc -cmin -1</code></p>
-    <p><code>find /tmp -type f -cmin -1</code></p>
-    <ul>Parâmetro -cmin 1, para o último minuto</ul>
-    <ul>Parâmetro -ctime 1, para o último dia, um dia atrás</ul>
-    <ul>Parâmetro -ctime +1, a mais de um dia</ul>
-    <br>
-    <p><code>find /usr -mount -iname</code></p>
-    <ul>Traz a pesquisa apenas nos pontos montados</ul>
-    <p><code>find /usr -gid 0</code></p>
-    <ul>Pesquisa para grupo 0, 1000</ul>
-    <p><code>find /home -gid 1000</code></p>
-    <ul>Pesquisa pastas do meu usuário</ul>
-    <p><code>find /home -user nome_de_usuario</code></p>
-    <ul>***** </ul>
-    <p><code>find /home -group nome_de_usuario</code></p>
-    <p><code>find /usr -links 2</code></p>
-    <ul>Traz links como referência (2,3,5)</ul>
-    <p><code>find /usr -size -1000</code></p>
-    <ul>Por tamanho (-1000) (+1000) em blocos</ul>
-    <p><code>find /usr -size -1000k</code></p>
-    <ul>Por tamanho em KiloBytes</ul>
-    <p><code>find /usr -size -1000c</code></p>
-    <ul>Por tamanho em bytes</ul>
-    <p><code>find /usr -type d</code></p>
-    <ul>Pesquisa por pasta</ul>
-    <ul>d para pasta</ul>
-    <ul>c para caracter</ul>
-    <ul>d para blocos</ul>
-    <ul>s para sockets</ul>
-    <ul>l para link simbólico</ul>
-    <ul>p para ?</ul>
-    <br>
-    <p><code>free</code></p>
-    <ul>Exibe memória livre do sistema operacional: RAM física, swap, RSS (memória residente)</ul>
-    <p><code>free --kilo</code></p>
-    <p><code>free --mega</code></p>
-    <p><code>free --kibi</code></p>
-    <p><code>free --mebi</code></p>
-    <p><code>free --gibi</code></p>
-    <p><code>free --tebi</code></p>
-    <p><code>free --pebi</code></p>
-    <p><code>free --mega -s 1</code></p>
-    <ul>***** Traz a memória a cada 1 segundo</ul>
-    <p><code>cat /proc/meminfo</code></p>
-    <ul>***** Detalhamento da memória usada no sistema</ul>
-    <p><code>grep</code></p>
-    <ul>***** Pesquisa por extensões dentro de um determinado arquivo</ul>
-    <p><code>grep 'root' /etc/passwd</code></p>
-    <ul>Traz as linhas que tem ROOT dentro desse arquivo</ul>
-    <p><code>cat /etc/passwd</code></p>
-    <p><code>grep 'man-data' /etc/passwd</code></p>
-    <p><code>grep -v</code></p>
-    <ul>Inverte a busca, traz todas linhas exceto a procurada</ul>
-    <p><code>grep -f /pasta/arquivo /pasta/arquivo</code></p>
-    <p><code>grep -i</code></p>
-    <ul>***** Ignora maiúsculas e minúsculas</ul>
-    <p><code>grep -iE '^www-data' /etc/passwd</code></p>
-    <p><code>grep -iE '^www-data.*nologin$' /etc/passwd</code></p>
-    <p><code>grep -iF '.*' /etc/passwd</code></p>
-    <ul>Faz pesquisa de texto utilizando caracteres especiais</ul>
-    <p><code>echo "linha nova" >> /pasta/arquivo</code></p>
-    <ul>*****</ul>
-    <p><code>grep -ri 'Foca02' .</code></p>
-    <ul>Pesquisa recursiva CaseSensitive</ul>
-    <p><code>grep -ril 'Foca02' .</code></p>
-    <ul>***** Pesquisa recursiva CaseSensitive indicando os arquivos</ul>
-    <p><code>grep -rin 'Foca02' .</code></p>
-    <ul>Indica o número da linha que contém a expressão</ul>
-    <br>
-    <p><code>head /etc/passwd</code></p>
-    <ul>Exibe as 10 primeiras linhas</ul>
-    <p><code>head -n 3 /etc/passwd</code></p>
-    <p><code>head -c 50 /etc/passwd</code></p>
-    <ul>Exibe primeiros 50 bytes do arquivo</ul>
-    <br>
-    <p><code>nl /etc/passwd</code></p>
-    <ul>Numera quantidade de linhas do arquivo</ul>
-    <p><code>nl -f a -i 3 /etc/passwd</code></p>
-    <ul>Pula de três em três</ul>
-    <p><code>nl -f a -i 2 /etc/passwd</code></p>
-    <ul>Pula de dois em dois</ul>
-    <p><code>cat /pasta/arquivo | more</code></p>
-    <ul>*</ul>
-    <p><code>cat /pasta/arquivo | less</code></p>
-    <ul>* less Pesquisa dentro do arquivo, digite: / palavra</ul>
-    <p><code>sort arquivo.txt</code></p>
-    <p><code>cat /pasta/arquivo | sort</code></p>
-    <p><code>cat /pasta/arquivo | sort -r</code></p>
-    <ul>Parâmetro -r inverte</ul>
-    <p><code>cat /pasta/arquivo | sort -n</code></p>
-    <ul>Classifica strings, depois números</ul>
-    <p><code>sort lista.txt -c</code></p>
-    <ul>Retorna lista desordenada ou não</ul>
-    <p><code>sort -n -c</code></p>
-    <p><code>sort +1</code></p>
-    <ul>Ordena pela segunda coluna</ul>
-    <p><code>sort +1 -t ";"</code></p>
-    <ul>Ponto e vírgula é delimitador</ul>
-    <p><code>sort -k 1</code></p>
-    <ul>Ordena pelo primeiro campo</ul>
-    <p><code>sort -k 2</code></p>
-    <ul>Ordena pelo segundo campo</ul>
-    <br>
-    <p><code>tail /pasta/arquivo</code></p>
-    <ul>Exibe 10 últimas linhas</ul>
-    <ul>Permite visualizar final de arquivo em um sistema operacional</ul>
-    <p><code>tail -n 4 /pasta/arquivo</code></p>
-    <ul>Exibe últimas 4 linhas</ul>
-    <p><code>cat /etc/passwd | sort -t ":" +2 -n</code></p>
-    <p><code>cat /etc/passwd | sort -t ":" +2 -n | tail -n 1</code></p>
-    <ul>Traz maior ID (serve para auditoria de sistema)</ul>
-    <p><code>cat /etc/passwd | sort -t ":" +2 -n | head -n 1</code></p>
-    <p><code>tail -f /var/log/auth.log</code></p>
-    <ul>Segue arquivo para observar modificações feitas</ul>
-    <br>
-    <p><code>time ls</code></p>
-    <ul>Mostra o tempo de execução do time ls</ul>
-    <p><code>time find / -name giropops</code></p>
-    <ul>Mostra o tempo que demorou para percorrer para procurar o giropops</ul>
-    <br>
-    <p><code>touch arquivo</code></p>
-    <ul>***** Comando para criar um arquivo vazio</ul>
-    <p><code>touch -t 10120815 arquivo</code></p>
-    <ul>Muda tempo de modificação</ul>
-    <p><code>touch -a -t 10120815 arquivo</code></p>
-    <ul>Muda tempo de acesso</ul>
-    <p><code>find /pasta -amin -1</code></p>
-    <ul>Exibe acessos no último minuto</ul>
-    <p><code>find /pasta -mmin -1</code></p>
-    <ul>Exibe modificações no último minuto</ul>
-    <br>
-    <p><code>uptime</code></p>
-    <ul>Mostra tempo</ul>
-    <br>
-    <p><code>dmesg</code></p>   
-    <ul>Exibe as mensagens do ring buffer do Kernel</ul>
-    <ul>É uma área que existe para armazenar as últimas mensagens no contexto do Kernel</ul>
-    <ul>Por padrão exibe 64 Kbytes, pode ser customizado na arquitetura de multi processadores durante a compilação do Kernel</ul>
-    <p><code>dmesg -t | grep enp0s3</code></p>
-    <p><code>dmesg --color=never</code></p>
-    <p><code>dmesg --color=auto</code></p>
-    <p><code>dmesg -w</code></p>
-    <ul>Vai ficar seguindo as mensagens do Kernel</ul>
-    <p><code>dmesg -x</code></p>
-    <ul>Decodifica algumas mensagens em texto legível</ul>
-    <p><code>dmesg -T</code></p>
-    <ul>Pega a time stamp do boot e ela fica legível com data e hora</ul>
-    <p><code>dmesg -c</code></p>
-    <ul>Limpa a mensagem do Kernel do buffer e mostra as novas</ul>
-    <p><code>talk</code></p>
-    <p><code>mesg y</code></p>
-    <p><code>echo 'mensagem'</code></p>
-    <ul>Exibe a palavra mensagem</ul>
-    <p><code>echo -n</code></p>
-    <ul>Não faz a quebra de linha</ul>
-    <p><code>echo -e</code></p>
-    <ul>Habilita caracteres especiais</ul>
-    <br>
-    <p><code>su</code></p>
-    <ul>Pede o login do super usuário</ul>
-    <p><code>su -</code></p>
-    <ul>Elimina variáveis de ambiente e inicia um ambiente novo</ul>
-    <p><code>/bin/su -</code></p>
-    <ul>Modo correto de chamar o super usuário (segurança)</ul>
-    <p><code>su - www-data -s /bin/bash</code></p>
-    <ul>Para logar como www-data</ul>
-    <br>
-    <p><code>sudo id</code></p>
-    <p><code>sudo su</code></p>
-    <p><code>adduser usuario sudo</code></p>
-    <ul>***** Dá privilégios de root a determinado superusuário</ul>
-    <ul>***** Remove privilégios de super usuário</ul>
-    <br>
-    <p><code>tail -f /var/log/auth.log</code></p>
-    <ul>***** Verifica incidentes no /etc/sudoers.d</ul>
-    <br>
-    <p><code>sync</code></p>
-    <ul>Permite gravar buffer do kernel no disco</ul>
-    <br>
-    <p><code>uname</code></p>
-    <ul>Retorna nome do nosso sistema operacional</ul>
-    <p><code>uname -a</code></p>
-    <ul>Retorna nome, versão do kernel, arquitetura, compilação</ul>
-    <p><code>uname -s</code></p>
-    <ul>Traz o Kernel</ul>
-    <p><code>uname -n</code></p>
-    <ul>Traz o nome da máquina na rede</ul>
-    <p><code>hostname</code></p>
-    <p><code>uname -r</code></p>
-    <ul>Versão atual do Kernel</ul>
-    <p><code>uname -v</code></p>
-    <ul>Data que o Kernel foi compilado</ul>
-    <p><code>uname -m</code></p>
-    <ul>Mostra a arquitetura utilizada. ARM para Raspberry Pi</ul>
-    <p><code>reboot</code></p>
-    <ul>Reinicia</ul>
-    <p><code>/bin/su - root</code></p>
-    <br>
-    <p><code>systemctl reboot</code></p>
-    <ul>Para fazer reboot sendo usuário</ul>
-    <p><code>reboot -f</code></p>
-    <ul>Reinicia a máquina forçado</ul>
-    <br>
-    <p><code>echo b > /proc/sysrq-trigger</code></p>
-    <ul>***** Para reiniciar o computador em último caso</ul>
-    <br>
-    <p><code>halt</code></p>
-    <ul>Desliga</ul>
-    <p><code>systemctl halt</code></p>
-    <p><code>echo o > /proc/sysrq-trigger</code></p>
-    <ul>***** Travou o modo gráfico e precisa desligar</ul>
-    <br>
-    <p><code>shutdown -h 09:40</code></p>
-    <ul>Programa horário de desligamento</ul>
-    <p><code>shutdown -h +10</code></p>
-    <ul>Desliga daqui a 10 minutos</ul>
-    <p><code>shutdown -c</code></p>
-    <ul>Cancela desligamento</ul>
-    <p><code>wc /etc/passwd</code></p>
-    <ul>***** Word count (mostra linhas, palavras, caracteres)</ul>
-    <p><code>wc -l arquivo</code></p>
-    <ul>Apenas número de linhas</ul>
-    <p><code>wc -c arquivo</code></p>
-    <ul>Apenas número de bytes, caracteres</ul>
-    <p><code>seq 10</code></p>
-    <ul>Imprime sequência de números de 1 a 10</ul>
-    <p><code>seq 2 10</code></p>
-    <p><code>seq 2 2 10</code></p>
-    <ul>seq [início] [passo] [final], incrementa 2</ul>
-    <p><code>seq -w</code></p>
-    <ul>Ordena começando pelo zero</ul>
-    <h2>Quinta parte</h2>
-    <p><code>chattr</code></p>
-    <p><code>lsattr</code></p>
-    <ul>Permite atributos do sistema de arquivos do sistema operacional Linux</ul>
-    <ul>Também diretórios</ul>
-    <ul>Permite listar e alterar atributos</ul>
-    <p><code>lsattr</code></p>
-    <ul>------------e---- ./arquivo</ul>
-    <ul>e significa extends, ext4</ul>
-    <p><code>chattr +i</code></p>
-    <ul>Atributo imutável, não pode apagar o arquivo, nem alterar</ul>
-    <p><code>chattr -i</code></p>
-    <ul>Retira o atributo imutável</ul>
-    <p><code>lsattr Pasta -d</code></p>
-    <ul>Lista os atributos da pasta</ul>
-    <p><code>chattr -i pasta/</code></p>
-    <p><code>chattr -R -i pasta/</code></p>
-    <ul>Recursivo</ul>
-    <p><code>lsattr pasta/</code></p>
-    <p><code>chattr +a arquivo</code></p>
-    <ul>Põe arquivo ou diretório em modo append</ul>
-    <p><code>chattr +a pasta</code></p>
-    <ul>Impede remoção do arquivo mas permite alteração</ul>
-    <p><code>chattr =ai *</code></p>
-    <p><code>chattr =aie *</code></p>
-    <p><code>chattr +c arquivo</code></p>
-    <ul>Compactado</ul>
-    <p><code>chattr -c arquivo</code></p>
-    <ul>Retira compactado</ul>
-    <p><code>chattr +s arquivo</code></p>
-    <ul>Marca arquivo como deleção segura</ul>
-    <p><code>chattr +S arquivo</code></p>
-    <ul>Permite fazer o sync do arquivo</ul>
-    <p><code>chattr +D pasta/</code></p>
-    <ul>Qualquer arquivo será gravado sem passar pelo cache</ul>
-    <p><code>chattr +d pasta</code></p>
-    <ul>Não inclui no backup do programa dump</ul>
-    <p><code>chattr -d pasta</code></p>
-    <ul>Lida com atributo no backup do programa dump</ul>
-    <br>
-    <p><code>cut -d ":" -f 1 /pasta/arquivo</code></p>
-    <ul>O comando corta um pedaço do arquivo para exibir apenas uma parte do conteúdo</ul>
-    <ul>dois pontos é o delimitador, parâmetro -d de delimitador, 1 significa campo</ul>
-    <p><code>cut -d ":" -f 1,7 /etc/passwd</code></p>
-    <p><code>cut -d ":" -f 1-3,7 /etc/passwd</code></p>
-    <p><code>cut -b 1-4 /etc/passwd</code></p>
-    <ul>Sintaxe de bytes</ul>
-    <p><code>cut -c 1-4 /etc/passwd</code></p>
-    <ul>Sintaxe de caracteres, não considera espaços</ul>
-    <p><code>cmp arquivo1 arquivo2</code></p>
-    <p><code>cmp -s arquivo1 arquivo2</code></p>
-    <ul>Retorna se foi comparado com sucesso ou não</ul>
-    <p><code>diff arquivo1 arquivo2</code></p>
-    <ul>Diferenças</ul>
-    <p><code>diff -u arquivo1 arquivo2</code></p>
-    <ul>Diferenças legível</ul>
-    <ul>Formato de comparação unificado</ul>
-    <p><code>diff -ru pasta1 pasta2</code></p>
-    <ul>Compara pasta com outra</ul>
-    <ul>Parâmetro -r significa recursivo</ul>
-    <h3>Exemplo de comparação usando o comando diff</h3>
-    <p><code>mkdir diff1 diff2</code></p>
-    <p><code>cd diff1</code></p>
-    <p><code>echo conteudo >> arquivo1</code></p>
-    <p><code>echo conteudo >> arquivo2</code></p>
-    <p><code>echo conteudo >> arquivo3</code></p>
-    <p><code>cd ../diff2</code></p>
-    <p><code>echo conteudo >> arquivo1</code></p>
-    <p><code>echo conteudo >> arquivo2</code></p>
-    <p><code>echo conteudo >> arquivo3</code></p>
-    <p><code>echo conteudo2 >> arquivo1</code></p>
-    <p><code>echo conteudo2 >> arquivo2</code></p>
-    <p><code>cd ..</code></p>
-    <p><code>diff -ru diff1 diff2</code></p>
-    <ul>Exibe as diferenças por arquivo</ul>
-    <ul>Mesmo conceito do git</ul>
-    <ul>diff1 significa versão anterior da aplicação</ul>
-    <ul>diff2 significa versão atual da aplicação</ul>
-    <h3>Criando patch</h3>
-    <p><code>diff -ru diff1 diff2 >> diferencas.patch</code></p>
-    <p><code>cat diferencas.patch</code></p>
-    <br>
-    <p><code>cd diff1</code></p>
-    <p><code>apt-get install patch</code></p>
-    <p><code>patch -p1 -N &lt; ../tmp/diferencas.patch</code></p>
-    <ul>fez o patch no arquivo1 e arquivo2</ul>
-    <ul>parâmetro -p1 significa o nível da pasta onde o patch foi aplicado</ul>
-    <ul>parâmetro N serve para não desfazer patches que já foram aplicados</ul>
-    <p><code>patch -p1 -R &lt; /tmp/</code></p>
-    <ul>Desfazer o patch aplicado</ul>
-    <h3>Exemplo de atualização de Patch do Kernel do Linux</h3>
-    <p><code>su -</code></p>
-    <p><code>cd /tmp</code></p>
-    <p><code>wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz</code></p>
-    <ul>Baixa o código fonte do Linux</ul>
-    <p><code>wget https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.0.10-11.xz</code></p>
-    <ul>Baixa o patch do kernel</ul>
-    <p><code>ls -l</code></p>
-    <p><code>tar -Jxvf linux-6.0.10.tar.xz</code></p>
-    <ul>Comando 'tar' descompacta</ul>
-    <ul>Parâmetro -J serve para descompactar arquivos 'xz'</ul>
-    <ul>Parâmetro x significa eXtrair</ul>
-    <ul>Parâmetro v significa modo verboso, para mostrar os arquivos que estão sendo descompactados</ul>
-    <ul>Parâmetro f serve para especificar qual arquivo eu quero descompactar</ul>
-    <p><code>cd /tmp/linux-6.0.10</code></p>
-    <p><code>du -hs linux-6.0.10</code></p>
-    <ul>Mostra o tamanho total do arquivo descompactado</ul>
-    <p><code>head Makefile</code></p>
-    <p><code>du -hs</code></p>
-    <p><code>cd ..</code></p>
-    <p><code>ls -l</code></p>
-    <p><code>xz -d patch-6.0.10-11.xz</code></p>
-    <p><code>ls -l</code></p>
-    <p><code>cd linux-6.0.10</code></p>
-    <p><code>patch -p1 -N &lt; /tmp/patch-6.0.10-11</code></p>
-    <p><code>head Makefile</code></p>
-    <ul>Conseguimos aplicar o patch do Linux na pasta do código fonte do Kernel</ul>
-    <br>
-    <h3>Mais comandos</h3>
-    <p><code>whereis ls</code></p>
-    <ul>Permite localizar um arquivo que contém a página de manual mais completa de ls</ul>
-    <p><code>zless /usr/share/man/man1/ls.1.gz</code></p>
-    <ul>zless descompactar arquivos com extensão gz</ul>
-    <p><code>man ls</code></p>
-    <ul>Abre o arquivo de página de manual</ul>
-    <br>
-    <p><code>which ls</code></p>
-    <ul>***** Permite localizar onde o binário se encontra no sistema operacional</ul>
-    <br>
-    <h3>Gerenciamento de processos</h3>
-    <p><code>mc -b /etc/passwd</code></p>
-    <ul>Abre mceditor em preto e branco</ul>
-    <p><code>ps | grep</code></p>
-    <ul>Verificar processos abertos na sessão</ul>
-    <p><code>ps</code></p>
-    <ul>Mostra processos que estão abertos apenas neste terminal</ul>
-    <p><code>ps a</code></p>
-    <ul>Mostra todos os processos em execução nos terminais</ul>
-    <h4>PID (Process Identificator)</h4>
-    <ul>Buscar binários no sistema operacional</ul>
-    <p><code>echo $PATH</code></p>
-    <ul>Significa caminho</ul>
-    <ul>Lista de caminhos separados por ":"</ul>
-    <p><code>which ls</code></p>
-    <ul>Como ele achou o comando ls?</ul>
-    <ul>Primeiramente ele pesquisou no primeiro campo</ul>
-    <p><code>echo $PATH | cut -d ":" -f 1</code></p>
-    <ul>Depois ele pesquisou no segundo campo</ul>
-    <p><code>echo $PATH | cut -d ":" -f 2</code></p>
-    <ul>Então ele achou o binário, assim que encontrado ele interrompe a pesquisa</ul>
-    <ul>PATH do root é diferente (não tem games)</ul>
-    <p><code>PATH=$PATH:/usr/bin</code></p>
-    <p><code>echo $PATH</code></p>
-    <ul>Acrescenta o diretório /usr/sbin na variável PATH</ul>
-    <br>
-    <h3>Procedimento para modificar o arquivo su</h3>
-    <p><code>which su</code></p>
-    <ul>Ver onde fica o binário "su"</ul>
-    <h4>Criar no /home uma pasta /bin e no /home</h4>
-    <p><code>mkdir bin</code></p>
-    <p><code>PATH=~/bin:$PATH</code></p>
-    <p><code>echo $PATH</code></p>
-    <h4>Criar um arquivo chamado su</h4>
-    <ol>
-       <li>#!/bin/bash</li> 
-       <li>echo -n "Senha: "</li>
-       <li>read var</li>
-       <li>echo "A senha digitada foi $var"</li>
-    </ol>
-    <p><code>which su</code></p>
-    <ul>Agora vai buscar 'su' do /home</ul>
-    <br>
-    <h3>Execução de programas</h3>
-    <p><code>sleep 10</code></p>
-    <ul>Espera para retornar para linha de comando</ul>
-    <p><code>sleep 10 &</code></p>
-    <p><code>sleep 100 &</code></p>
-    <p><code>cat /proc/numero_do_PID/cmdline</code></p>
-    <p><code>jobs</code></p>
-    <ul>Exibe os programas em execução no segundo plano</ul>
-    <p><code>fg 1</code></p>
-    <ul>Traz o programa em execução para primeiro plano</ul>
-    <p>CTRL + Z<p>
-    <ul>Pára o programa em execução</ul>
-    <p><code>bg 1</code></p>
-    <ul>Joga o programa em execução parado para segundo plano</ul>
-    <p>CTRL + C</p>
-    <ul>Mata execução do programa que está no primeiro plano</ul>
-    <p><code>kill %1</code></p>
-    <ul>Mata execução do programa que está no 'job 1'</ul>
-    <p><code>ps</code></p>
-    <p><code>ps -ax</code></p>
-    <ul>Lista processos de todos os usuários</ul>
-    <p><code>ps -axu</code></p>
-    <ul>Lista também usuários</ul>
-    <ul>VS2 &#8594; tamanho virtual; RSS &#8594; tamanho residente</ul>
-    <ul>STAT &#8594; S &#8594; Soneca não interrompível, processo importante sendo executado</ul>
-    <ul>STAT &#8594; D &#8594; Entrada e saída de disco, leitura de disco</ul>
-    <ul>STAT &#8594; I &#8594; Idle ocioso</ul>
-    <ul>STAT &#8594; R &#8594; Rodando, Run</ul>
-    <ul>STAT &#8594; Z &#8594; Processo zumbi, processo que perdeu a referência do processo pai</ul>
-    <ul>STAT &#8594; X &#8594; Nunca deve ser exibido, processo que foi morto</ul>
-    <br>
-    <p><code>ps -axm</code></p>
-    <ul>Mostra procesos de memória</ul>
-    <p><code>ps -f</code></p>
-    <p><code>ps -axf</code></p>
-    <ul>Mostra os processos em árvore</ul>
-    <p><code>ps -axew</code></p>
-    <ul>Mostra as variáveis de ambiente utilizadas no comando com wrap</ul>
-    <p><code>ps ax --sort=pid</code></p>
-    <ul>Classifica por PID</ul>
-    <p><code>ps ax --sort=pid | head</code></p>
-    <p><code>ps ax --sort=rss</code></p>
-    <ul>Classifica por memória residente</ul>
-    <p><code>pss ax --sort=tty</code></p>
-    <p><code>pidof cron</code></p>
-    <ul>***** Mostra o PID do processo cron</ul>
-    <p><code>pstree</code></p>
-    <ul>Árvore de processos</ul>
-    <p><code>pstree -A</code></p>
-    <ul>Árvore de processos usando caracteres ASCII</ul>
-    <p><code>pstree -c</code></p>
-    <ul>Mostra toda estrutura  incluindo processos pai</ul>
-    <p><code>pstree -h</code></p>
-    <ul>Destaca processos pai e os antecessores</ul>
-    <p><code>pstree -h -p</code></p>
-    <ul>Exibe também o PID</ul>
-    <p><code>pstree -p -H 352</code></p>
-    <ul>Exibe um processo especial</ul>
-    <p><code>pstree -p -H 433 -u</code></p>
-    <ul>Mostra o PID do processo que está em Excel</ul>
-    <p><code>pstree -p -H 433 -g</code></p>
-    <ul>Mostra o grupo de execução</ul>
-    <br>
-    <p><code>kill [PID]</code></p>
-    <ul>Encerra o processo</ul>
-    <p><code>kill -15 [PID]</code></p>
-    <ul>Fechar de forma amigável</ul>
-    <p><code>kill -9 [PID}</code></p>
-    <ul>Mata o programa sem perguntar</ul>
-    <p><code>kill -HUP [PID}</code></p>
-    <ul>Faz o processo reler o modo de sistema operacional sem finalizar</ul>
-    <p><code>kill -1 [PID]</code></p>
-    <ul>Equivalente ao kill -HUP</ul>
-    <p><code>kill -KILL [PID]</code></p>
-    <ul>Equivalente ao kill -9</ul>
-    <p><code>kill -TERM [PID]</code></p>
-    <ul>Equivalente ao kill -15</ul>
-    <p><code>pgrep -u root sshd</code></p>
-    <ul>Lista processos do ROOT que tem SSHD</ul>
-    <p><code>pgrep sshd</code></p>
-    <ul>Pesquisa SSHD em todos os processos</ul>
-    <p><code>pkill -u usuario sleep</code></p>
-    <ul>Mata processo especificado de usuário</ul>
-    <p><code>killall -u usuario sleep</code></p>
-    <ul>Mata de acordo com o nome</ul>
-    <p><code>killall5 -9</code></p>
-    <ul>***** Mata todos os processos com ROOT</ul>
-    <ul>Perde o acesso remoto da máquina</ul>
-    <p><code>nohup sleep 200 &</code></p>
-    <ul>Protege um processo em execução para que ele não seja afetado por sinais de interrupção. Exemplo: exceto -9 e -15</ul>
-    <br>
-    <p><code>top</code></p>
-    <ul>***** Mostra estado de execução dos processos na máquina</ul>
-    <p><code>SHIFT + M</code></p>
-    <ul>Classifica por memória</ul>
-    <p><code>M</code></p>
-    <ul>Muda a barra</ul>
-    <p><code>F</code></p>
-    <ul>Traz tela descritiva. A (desce), W (sobe)</ul>
-    <p><code>Q</code></p>
-    <ul>Retorna a listagem</ul>
-    <p><code>K</code></p>
-    <ul>Pergunta qual processo quer matar</ul>
-    <p><code>D &#8594; 1</code></p>
-    <ul>Muda o delay, atualiza a cada 1 segundo</ul>
-    <p><code>SHIFT + W</code></p>
-    <ul>Salva a configuração no HOME</ul>
-    <br>
-    <p><code>top -i</code></p>
-    <ul>Ignora processos zumbis</ul>
-    <p><code>top -c</code></p>
-    <ul>Mostra linha de comando completa. Pode apertar 'c' dentro do TOP</ul>
-    <br>
-    <p><code>nice -n 10 sleep 1000</code></p>
-    <ul>Determina qual prioridade um programa ou um comando pode ser executado no sistema operacional. Varia de -20 a 19</ul>
-    <ul>Prioridades abaixo de zero são permitidas apenas para o ROOT</ul>
-    <p><code>renice -n 10 -p 597</code></p>
-    <ul>Processo será executado com prioridade nova (10)</ul>
-    <p><code>renice -n 10 -u usuario</code></p>
-    <p><code>renice -n 10 -g usuario</code></p>
-    <br>
-    <p><code>tload</code></p>
-    <ul>***** Visualização gráfica de processos. &#8594; Q para sair</ul>
-    <p><code>vmstat</code></p>
-    <ul>Visualização dos parâmetros do sistema operacional linha a linha</ul>
-    <p><code>vmstat 1</code></p>
-    <ul>Atualiza a cada 1 segundo</ul>
-    <br>
-    <h3>Multiplexador de terminais</h3>
-    <br>
-    <p><code>apt install screen</code></p>
-    <p><code>screen</code></p>
-    <ul>***** Cria várias telas dentro do mesmo terminal</ul>
-    <p><code>CTRL + A</code></p>
-    <ul>Mostra as telas, atalhos internos</ul>
-    <p><code>CTRL + A, W</code></p>
-    <ul>Mostra quantas screens tem</ul>
-    <p><code>CTRL + A, C</code></p>
-    <ul>Cria tela dentro do mesmo terminal</ul>
-    <p><code>CTRL + A, A</code></p>
-    <ul>Alterna entre as telas criadas</ul>
-    <p><code>CTRL + A, 0</code></p>
-    <ul>Vai para a screen zero</ul>
-    <p><code>CTRL + A, 1</code></p>
-    <ul>Vai para a screen um e assim por diante</ul>
-    <p><code>CTRL + A, D</code></p>
-    <ul>Detachar, desconectar da screen</ul>
-    <p><code>screen -ls</code></p>
-    <ul>Lista processos dentro da screen</ul>
-    <p><code>screen -x</code></p>
-    <ul>Reconecto na minha screen</ul>
-    <br>
-    <p><code>apt-get install tmux</code></p>
-    <p><code>tmux new</code></p>
-    <p><code>CTRL + B</code></p>
-    <ul>Mostra as telas, atalho interno</ul>
-    <p><code>CTRL + B, C</code></p>
-    <ul>Cria uma nova tela</ul>
-    <p><code>CTRL + B, 0</code></p>
-    <ul>Vai para a tela zero</ul>
-    <p><code>CTRL + B, D</code></p>
-    <ul>Desconecta</ul>
-    <br>
-    <p><code>tmux ls</code></p>
-    <ul>Lista as sessões tmux que estão criadas</ul>
-    <p><code>tmux attach</code></p>
-    <ul>Para reconectar</ul>
-    <p><code>CTRL + B, SHIFT + "</code></p>
-    <ul>Divide a tela horizontalmente</ul>
-    <p><code>CTRL + B, seta para cima</code></p>
-    <ul>Alterna entre tela</ul>
-    <p><code>CTRL + B, seta para baixo</code></p>
-    <p><code>exit</code></p>
-    <ul>Fecha a tela de baixo</ul>
-    <p><code>CTRL + B, sinal de %</code></p>
-    <ul>Divide a tela verticalmente</ul>
-    <p><code>CTRL + B, aspas duplas</code></p>
-    <ul>Redivide a tela horizontalmente</ul>
-    <p><code>CTRL + B, seta para esquerda</code></p>
-    <ul>Alterna tela</ul>
-    <h2>Comandos do Linux para Windows</h1>
-    <h2>Comandos do Linux para MS-DOS</h1>
-    <p><code>chmod</code></p>
-    <ul>attrib</ul>
-    <p><code>tar</code></p>
-    <ul>backup </ul>
-    <p><code>cd</code></p>
-    <ul>cd </ul>
-    <p><code>cd ..</code></p>
-    <ul>cd..</ul>
-    <p>cd /</p>
-    <ul>cd\</ul>
-    <p><code>date</code></p>
-    <ul>date</ul>
-    <p><code>ls</code></p>
-    <ul>dir</ul>
-    <p><code>clear</code></p>
-    <ul>cls </ul>
-    <p><code>cp</code></p>
-    <ul>copy</ul>
-    <p><code>rm</code></p>
-    <ul>del</ul>
-    <p><code>rm -R</code></p>
-    <ul>deltree</ul>
-    <p><code>nano</code></p>
-    <ul>edit</ul>
-    <p><code>exit</code></p>
-    <ul>exit</ul>
-    <p><code>fdformat</code></p>
-    <ul>format</ul>
-    <p><code>ip a</code></p>
-    <ul>ipconfig</ul>
-    <p><code>mkdir</code></p>
-    <ul>md</ul>
-    <p><code>ls | more</code></p>
-    <ul>dir /p</ul>
-    <p><code>mv</code></p>
-    <ul>move</ul>
-    <p><code>mv</code></p>
-    <ul>rename</ul>
-    <p><code>netstat</code></p>
-    <ul>netstat</ul>
-    <p><code>ping</code></p>
-    <ul>ping</ul>
-    <p><code>rmdir</code></p>
-    <ul>rmdir</ul>
-    <p><code>time</code></p>
-    <ul>time</ul>
-    <p><code>traceroute</code></p>
-    <ul>tracetr</ul>
-    <p><code>cat | less</code></p>
-    <ul>type</ul>
-    <p><code>startx</code></p>
-    <ul>win</ul>
-    <p><code>cp -R</code></p>
-    <ul>xcopy</ul>
+    <section id="resumo">
+        <h1>Comandos do Linux</h1>
+        <h2>Guia rápido</h2>
+        <p><code>chmod</code></p>
+        <ul>Mudar permissões de arquivos</ul>
+        <p><code>tar</code></p>
+        <ul>Descompactar arquivos</ul>
+        <p><code>cd</code></p>
+        <ul>Entrar em uma pasta </ul>
+        <p><code>cd ..</code></p>
+        <ul>Sair de uma pasta</ul>
+        <p><code>date</code></p>
+        <ul>Ver a data e hora de hoje</ul>
+        <p><code>ls</code></p>
+        <ul>Listar arquivos</ul>
+        <p><code>clear</code></p>
+        <ul>Limpar tela</ul>
+        <p><code>cp</code></p>
+        <ul>Copiar arquivos</ul>
+        <p><code>rm</code></p>
+        <ul>Remover, apagar, deletar arquivos</ul>
+        <p><code>rm -R</code></p>
+        <ul>Apagar diretório</ul>
+        <p><code>nano</code></p>
+        <ul>Editar arquivos. Entrar no editor de texto</ul>
+        <p><code>exit</code></p>
+        <ul>Sair</ul>
+        <p><code>fdformat</code></p>
+        <ul>Formatar disco</ul>
+        <p><code>ip a</code></p>
+        <ul>Verificar o ip da máquina</ul>
+        <p><code>mkdir</code></p>
+        <ul>Criar pasta</ul>
+        <p><code>ls | less</code></p>
+        <ul>Listar arquivos permitindo rolamento de tela</ul>
+        <p><code>mv</code></p>
+        <ul>Mover arquivos, renomear arquivos</ul>
+        <p><code>netstat</code></p>
+        <ul>Verificar rede</ul>
+        <p><code>ping</code></p>
+        <ul>Enviar e receber dados da rede</ul>
+        <p><code>rmdir</code></p>
+        <ul>Apagar pasta</ul>
+        <p><code>time</code></p>
+        <ul>Verificar hora</ul>
+        <p><code>traceroute</code></p>
+        <ul>Verificar percurso para acessar um URL</ul>
+        <p><code>cat | less</code></p>
+        <ul>Ler arquivo, verificar arquivo, verificar conteúdo</ul>
+        <p><code>startx</code></p>
+        <ul>Iniciar o modo gráfico</ul>
+        <p><code>cp -R</code></p>
+        <ul>Copiar pasta</ul>
+        <br>
+    </section>
+    <section id="Primeira_parte">
+        <h2>Primeira parte</h2>
+        <p><code>su -</code></p>
+        <ul>Solicita a senha do super usuário</ul>
+        <p><code>lsb_release -a</code></p>
+        <ul>Mostra a versão do Linux que está instalada</ul>
+        <p><code>apt install coreutils bsdutils bsdmainutils net-tools tree man-db</code></p>
+        <ul>Instala pacotes essenciais</ul>
+    </section>
+    <section id="Segunda_parte">
+        <h2>Segunda parte</h2>
+        <p><code>ssh usuario@192.168.1.1</code>
+        <ul>Acessa remoto e pede login</ul></p>
+        <p><code>ip a</code></p>
+        <ul>Mostra as informações das interfaces de rede</ul>
+        <p><code>cat /etc/debian_version</code></p>
+        <ul>Mostra a versão do Debian</ul>
+        <p><code>pwd</code></p>
+        <ul>Mostra a pasta que está. Exemplo: /home/usuario</ul>
+        <p><code>su - root</code></p>
+        <ul>Solicita a senha do root</ul>
+        <p><code>pwd</code></p>
+        <ul>Mostra a pasta que está. Exemplo: /root</ul>
+        <p><code>cd</code></p>
+        <ul>Sozinho vai direto para o diretório do root</ul>
+        <p><code>cd -</code></p>
+        <ul>Voltou para o último diretório</ul>
+        <p><code>cd ~</code></p>
+        <ul>Vai para o diretório home do usuário</ul>
+        <p><code>ls -lha</code></p>
+        <ul>Lista arquivos e pastas</ul>
+        <p><code>ls -a</code></p>
+        <ul>Parâmetro -a serve para listar arquivos ocultos</ul>
+        <p><code>ls -all</code></p>
+        <ul>Lista todos os arquivos</ul>
+        <p><code>ls -l</code></p>
+        <ul>Lista mais detalhes sobre arquivos</ul>
+        <p><code>ls -al</code></p>
+        <p><code>ls -h</code></p>
+        <ul>Parâmetro headable</ul>
+        <p><code>ls -alh</code></p>
+        <ul>Legível para humanos</ul>
+        <br>
+        <p><code>clear</code></p>
+        <ul>Limpa a tela</ul>
+        <p><code>CTRL + L</code></p>
+        <ul>Atalho também serve para limpar a tela</ul>
+        <h3>Modelos de Programas de Shell:</h3>
+        <h3><ul>bash</ul><ul>ksh</ul><ul>pdksh</ul><ul>zsh</ul></h3>
+        <p><code></code></p>
+        <h2>Outros comandos</h2>
+        <ul>Seta para cima: traz histórico dos últimos comandos digitados</ul>
+        <p><code>history</code></p>
+        <ul>Histórico de comandos digitados</ul>
+        <p><code>bash</code></p>
+        <p><code>cat /etc/shells</code></p>
+        <p><code>exit</code></p>
+        <ul>Sai da sessão</ul>
+        <p><code>bash</code></p>
+        <ul>CTRL + D</ul>
+        <ul>Sai do bash</ul>
+        <p><code>ls -lha</code></p>
+        <ul>drwx ('d' significa diretório)</ul>
+        <ul>referência ao diretório atual usa-se um ponto</ul>
+        <ul>exemplo: ./arquivo</ul>
+        <ul>referência ao diretório anterior se usa ponto ponto</ul>
+        <ul>exemplo: ../arquivo</ul>
+        <p><code>cd ..</code></p>
+        <ul>Volta para uma pasta acima</ul>
+        <p><code>cd ../../../../</code></p>
+        <ul>Volta para quatro pastas anteriores</ul>
+        <p><code>cd /etc</code></p>
+        <ul>Então aperte TAB</ul>
+        <ul>ou então aperte 2 vezes o TAB</ul>
+        <h3>Definição de arquivo</h3>
+        <h3>Definição de diretório</h3>
+        <h3>Caminho relativo</h3>
+        <h3>Caminho absoluto</h3>
+        <p><code>cd /</code></p>
+        <ul>Vai para o diretório raiz</ul>
+        <p><code>ls</code></p>
+        <ul>Lista arquivos ou pastas</ul>
+        <p><code>cd root</code></p>
+        <ul>Acessa o diretório root</ul>
+        <p><code>pwd</code></p>
+        <h3>Linux Standard Base - LSB</h3>
+        <h3>Filesystem Hierarchy Standard - FHS</h3>
+        <ul>Versão 1.0 é de 1994</ul>
+        <ul>Versão 3.0 é a de 2022</ul>
+        <p><code>cd /bin</code></p>
+        <ul>Pasta de binários do sistema</ul>
+        <ul>São os arquivos executáveis (comandos)</ul>
+        <ul>Uso universal</ul>
+        <ul>Para rolar a tela use SHIFT + PageUp, SHIFT + PageDown ou Scroll do mouse</ul>
+        <p><code>ls -lha | grep ls</code></p>
+        <ul>*****</ul>
+        <p><code>cd boot</code></p>
+        <ul>Iniciação do sistema</ul>
+        <ul>Grub</ul>
+        <ul>vmlinuz* é o kernel do linux</ul>
+        <p><code>cd /dev</code></p>
+        <ul>Dispositivos / arquivos que simbolizam dispositivos</ul>
+        <p><code>ls -lha | more</code></p>
+        <ul>Melhora a rolagem da tela</ul>
+        <p><code>ls -lha | less</code></p>
+        <ul>***** Melhora a rolagem da tela</ul>
+        <h3>Partições</h3>
+        <ul>sda, significa SATA disco</ul>
+        <ul>sda1, partição primária</ul>
+        <ul>sda2, partição primária</ul>
+        <ul>sda5, partição lógica</ul>
+        <br>
+        <ul>hda, ATA disco</ul>
+        <br>
+        <ul>Partições primárias, máximo 4 partições</ul>
+        <ul>Partições lógicas, abre mão de uma lógica e abre extendidas, limite 12</ul>
+        <br>
+        <ul>sdc6, terceiro disco, segunda partição lógica</ul>
+        <ul>sdd2, quarto disco, segunda partição primária</ul>
+        <ul>sdb9, segundo disco, quinta partição lógica</ul>
+        <br>
+        <ul>b - Dispositivo de Bloco, armazena informação</ul>
+        <ul>c - Dispositivo de Caracter, recebe e envia informação</ul>
+        <ul>d - Diretório</ul>
+        <ul>l - Link simbólico</ul>
+        <ul>tty1, significa terminal, CTRL + ALT + F1</ul>
+        <ul>tty2, significa terminal, CTRL + ALT + F2</ul>
+        <ul>tty3, significa terminal, CTRL + ALT + F3</ul>
+        <ul>tty4, significa terminal, CTRL + ALT + F4</ul>
+        <ul>tty5, significa terminal, CTRL + ALT + F5</ul>
+        <ul>lp, significa porta de impressora, LPT1</ul>
+        <ul>ttys1, significa porta de comunicação, COM1</ul>
+        <ul>psaux, significa mouse</ul>
+        <ul>net, significa rede</ul>
+        <br>
+        <p><code>cat /dev/sda</code></p>
+        <ul>Mostra arquivo em linguagem de máquina</ul>
+        <p><code>df -h</code></p>
+        <ul>*****</ul>
+        <p><code>cd /etc</code></p>
+        <ul>Arquivos de configuração</ul>
+        <p><code>ls -lha hostname</code></p>
+        <ul>Lista o arquivo hostname dentro da pasta /etc</ul>
+        <p><code>cd /etc/network</code></p>
+        <ul>Configurações da rede</ul>
+        <ul>Arquivo interfaces.d tem as configurações de rede</ul>
+        <p><code>cat interfaces.d</code></p>
+        <ul>Exibe o arquivo interfaces.d</ul>
+        <p><code>cd /etc</code></p>
+        <ul>Volta para a pasta /etc</ul>
+        <p><code>cat motd</code></p>
+        <ul>Exibe mensagem do dia</ul>
+        <ul>motd significa 'message of the day'</ul>
+        <p><code>echo "CONTEUDO NOVO" > /etc/motd</code></p>
+        <ul>Substitui conteúdo do arquivo</ul>
+        <br>
+        <p><code>cd /home</code></p>
+        <ul>Diretórios de cada usuário</ul>
+        <ul>initrd.img, imagem de INIT</ul>
+        <br>
+        <p><code>cd /lib</code></p>
+        <ul>Bibliotecas, equivalente aos DLL do Win</ul>
+        <ul>São comuns extensões .so .versão</ul>
+        <p><code>cd /lib/modules/5.10.0-19-amd64/kernel/drivers</code></p>
+        <ul>Drivers (Kernel)</ul>
+        <p><code>cd /media</code></p>
+        <ul>Ponto de montagem, pendrive</ul>
+        <p><code>cd /mnt</code></p>
+        <ul>Ponto de montagem temporário, arquivos ISO</ul>
+        <p><code>cd /opt</code></p>
+        <ul>Pasta temporária</ul>
+        <p><code>cd /proc</code></p>
+        <ul>File System Virtual, informações sobre a máquina, benchmarking</ul>
+        <p><code>cat cpuinfo</code></p>
+        <p><code>cat meminfo</code></p>
+        <p><code>cat uptime</code></p>
+        <p><code>cat swaps</code></p>
+        <br>
+        <p><code>cd /root</code></p>
+        <ul>Exclusivo do root, HOME do root</ul>
+        <p><code>cd /run</code></p>
+        <ul>Traz tudo que está rodando na máquina (outra pasta com arquivos temporários)</ul>
+        <p><code>df -h</code></p>
+        <p><code>cd /sbin</code></p>
+        <ul>Arquivos executáveis do super usuário</ul>
+        <ul>Exemplos: useradd, userdel, usermod, swapon, swapoff</ul>
+        <ul>shutdown, runuser, sulogin, pwconv, pwunconv</ul>
+        <ul>***** mkfs (para formatar)</ul>
+        <p><code>cd /srv</code></p>
+        <ul>Dados estáticos: HTTP, FTP, Apache, Repositórios Git, Web Server, Script</ul>
+        <p><code>cd /sys</code></p>
+        <ul>Informação do sistema (hardware)</ul>
+        <ul>Kernel, devices, drivers</ul>
+        <p><code>cd /tmp</code></p>
+        <ul>Conteúdo apaga quando reboota</ul>
+        <p><code>cd /usr</code></p>
+        <ul>Segunda estrutura de diretórios</ul>
+        <ul>Binários não essenciais para o sistema</ul>
+        <ul>Arquivos executáveis não obrigatórios</ul>
+        <ul>Pasta include (cabeçalhos em C)</ul>
+        <ul>Pasta src (código fonte do Kernel)</ul>
+        <ul>Pasta X11R6 (modo gráfico)</ul>
+        <p><code>cd /usr/local</code></p>
+        <ul>Terceira hierarquia, estrutura de diretórios</ul>
+        <ul>Nada que você vai compartilhar em rede</ul>
+        <p><code>cd /usr/bin</code></p>
+        <ul>***** Pasta dos executáveis do sistema para o usuário</ul>
+        <p><code>cd /var</code></p>
+        <ul>Pasta do www</ul>
+        <ul>/var/www</ul>
+        <ul>Instalação pelo Apache</ul>
+        <p><code>cd /var/logs</code></p>
+        <ul>Logs do sistema</ul>
+        <p><code>cd /var/cache</code></p>
+        <ul>Cache</ul>
+        <p><code>cd /var/lib</code></p>
+        <ul>***** Informação do estado dos dados</ul>
+        <p><code>cd /var/lock</code></p>
+        <ul>Executa comandos e trava tipo apt-get</ul>
+        <p><code>cd /var/mail</code></p>
+        <p><code>cd /var/opt</code></p>
+        <p><code>cd /var/run</code></p>
+        <ul>Informação dos processos</ul>
+        <p><code>halt</code></p>
+        <ul>Desligar</ul>
+        <p><code>reboot</code></p>
+        <ul>Reiniciar</ul>
+        <p><code>shutdown -h now</code></p>
+        <ul>Desligar agora</ul>
+        <p><code>shutdown -r now</code></p>
+        <ul>Reiniciar agora</ul>
+        <p><code>poweroff</code></p>
+        <ul>Desliga</ul>
+        <p><code>init 0</code></p>
+        <ul>Desliga</ul>
+        <p><code>init 6</code></p>
+        <ul>Reinicia</ul>
+        <p><code>shutdown --help</code></p>
+        <ul>Ajuda do comando shutdown</ul>
+        <p><code>shutdown -h +30</code></p>
+        <ul>Programa o desligamento para 30 minutos</ul>
+        <p><code>shutdown -c</code></p>
+        <ul>Cancela o desligamento programado</ul>
+        <p><code>shutdown -r +30</code></p>
+        <ul>Programa o reinício da máquina em 30 minutos</ul>
+        <ul>Programa desliga e manda mensagem</ul>
+        <br>
+    </section>
+    <section id="Terceira_parte">
+        <h2>Terceira parte</h2>
+        <h3>Comandos internos e externos</h3>
+        <p><code>echo "teste"</code></p>
+        <ul>Exibe mensagem na tela</ul>
+        <p><code>alias ls='ls -s'</code></p>
+        <ul>Cria apelido de um comando para outro comando</ul>
+        <p><code>which ls</code></p>
+        <ul>Identifica onde está o binário na sua máquina</ul>
+        <p><code>man builtins</code></p>
+        <ul>Mostra os comandos contidos dentro do interpretador de comandos bash</ul>
+        <p><code>su - root</code></p>
+        <ul>Faz login como root</ul>
+        <h3>Como criar um shell script</h3>
+        <p><code>cd /usr/local/bin</code></p>
+        <p><code>vi alias</code></p>
+        <ul>Entra no editor de texto chamado vi</ul>
+        <h4>Dentro do VI escreva:</h4>
+        <ul>#!/bin/sh</ul>
+        <ul>echo "Não execute este script"</ul>
+        <h4>Aperte ESC</h4>
+        <h4>Tecle :x e aperte ENTER para salvar e sair do VI</h4>
+        <h3>No shell saindo do VI</h3>
+        <p><code>exit</code></p>
+        <ul>Sai do ROOT</ul>
+        <p><code>alias</code></p>
+        <ul>Traz alias embutido no shell</ul>
+        <p><code>/usr/local/bin/alias</code></p>
+        <ul>Executa o alias criado por nós se houver</ul>
+        <ul>Se não houver autorização do ROOT, o sistema relata um problema de segurança no arquivo sudoers</ul>
+        <p><code>ls</code></p>
+        <ul>Lista arquivos</ul>
+        <p><code>touch arquivo</code></p>
+        <ul>Comando cria arquivo vazio</ul>
+        <p><code>ls -a</code></p>
+        <ul>Lista tudo</ul>
+        <p><code>ls -A</code></p>
+        <ul>Lista sem listar diretório atual e nível anterior</ul>
+        <p><code>ls -B</code></p>
+        <ul>Não lista os arquivos com sinal ~ no final</ul>
+        <ul>O til significa que é um arquivo de backup</ul>
+        <ul>backup~</ul>
+        <p><code>mkdir Pasta1</code></p>
+        <ul>Comando cria uma pasta vazia</ul>
+        <ul>Criar pasta vazia</ul>
+        <ul>Criar diretório vazio</ul>
+        <p><code>ls --color=auto</code></p>
+        <p><code>ls --color=always</code></p>
+        <p><code>ls --color=never</code></p>
+        <p><code>ls Pasta1</code></p>
+        <ul>Não vai exibir nada porque não tem pasta criada</ul>
+        <p><code>touch Pasta1/arquivo1_pasta1</code></p>
+        <p><code>ls Pasta1</code></p>
+        <ul>Lista o arquivo</ul>
+        <p><code>ls Pasta1 Pasta2</code></p>
+        <ul>Lista as duas pastas ao mesmo tempo</ul>
+        <p><code>ls -d Pasta1</code></p>
+        <ul>Lista apenas nome da pasta</ul>
+        <p><code>ls -l</code></p>
+        <ul>Traz detalhamento da listagem dos arquivos nesta ordem:</ul>
+        <ul>Permissões, dono, grupo, tamanho, data da última alteração</ul>
+        <p><code>echo conteudo > teste</code></p>
+        <ul>Joga conteúdo no arquivo chamado teste</ul>
+        <p><code>ls -l --color=auto</code></p>
+        <p><code>ls -f</code></p>
+        <ul>Não classifica a listagem (ordem de criação)</ul>
+        <p><code>ls -F</code></p>
+        <ul>Se for pasta põe /</ul>
+        <ul>Se for socket coloca =</ul>
+        <ul>Se for link simbólico @</ul>
+        <ul>Se for executável ou binário *</ul>
+        <p><code>chmod 755 arquivo</code></p>
+        <ul>Altera permissão de execução</ul>
+        <p><code>ls -l -G</code></p>
+        <ul>Exibe só a coluna do dono do arquivo</ul>
+        <p><code>ls -lG</code></p>
+        <h3>Definição parâmetro extenso | parâmetro curto</h3>
+        <p><code>ls -a</code></p>
+        <ul>Lista diretório atual, anterior e arquivos ocultos</ul>
+        <p><code>ls -ln</code></p>
+        <p><code>ls -n</code></p>
+        <ul>Pega nome do dono e grupo, converte tudo para id unix</ul>
+        <ul>Lista em formato numérico</ul>
+        <p><code>ls -L</code></p>
+        <ul>Lista os apontamentos do link simbólico</ul>
+        <p><code>ls -l -o</code></p>
+        <ul>Exibe apenas o dono</ul>
+        <p><code>ls -g -l</code></p>
+        <ul>Exibe apenas o grupo</ul>
+        <p><code>ls -l -p</code></p>
+        <ul>Faz o que faz o -F mas não inclui os arquivos executáveis</ul>
+        <ul>Só lista o barra das pastas</ul>
+        <p><code>ls -t</code></p>
+        <p><code>ls -lt</code></p>
+        <ul>Ordena os arquivos por data (mais novos para mais antigos)</ul>
+        <p><code>ls -latr</code></p>
+        <ul>Lista arquivos do mais antigo para o mais novo</ul>
+        <p><code>ls -r</code></p>
+        <ul>O parâmetro -r reverte a lista</ul>
+        <p><code>ls -lac</code></p>
+        <ul>O parâmetro 'c' classifica pela data da alteração</ul>
+        <p><code>ls -lax</code></p>
+        <ul>O parâmetro 'x' classifica pela extensão</ul>
+        <p><code>ls -lXr</code></p>
+        <ul>r reverte</ul>
+        <p><code>ls -lXR</code></p>
+        <ul>O parâmetro 'R' maiúsculo serve para lista recursiva (pastas)</ul>
+        <p><code>ls /bin</code></p>
+        <ul>Lista a pasta</ul>
+        <p><code>ls /bin -F</code></p>
+        <ul>Lista o tipo</ul>
+        <p><code>ls /bin -F --color=auto</code></p>
+        <ul>Lista o tipo e põe cores</ul>
+        <p><code>mkdir -p Diretorio1/Diretorio2/Diretorio121</code></p>
+        <ul>***** Cria diretórios dentro de diretórios</ul>
+        <p><code>rmdir</code></p>
+        <ul>Só remove pasta vazia</ul>
+        <p><code>rmdir -p Diretorio1/Diretorio2/Diretorio121</code></p>
+        <ul>Remove caminho</ul>
+        <p><code>cat arquivo</code></p>
+        <ul>Visualiza conteúdo do arquivo, equivalente 'type' do win</ul>
+        <p><code>cat -r arquivo</code></p>
+        <ul>Exibe números das linhas</ul>
+        <p><code>cat -s arquivo</code></p>
+        <ul>Oculta linha em branco repetidas</ul>
+        <p><code>cat -b arquivo</code></p>
+        <ul>Enumera apenas as linhas que contém um conteúdo</ul>
+        <p><code>cat -E arquivo</code></p>
+        <ul>Exibe um sifrão em cada final de linha</ul>
+        <p><code>cat -T arquivo</code></p>
+        <ul>TABs são convertidos para ^I</ul>
+        <p><code>zcat arquivo.gz</code></p>
+        <ul>Visualiza arquivos compactados com extensão gz</ul>
+        <ul>Evita descompactar o arquivo para ver o conteúdo</ul>
+        <p><code>bzcat arquivo.bz2</code></p>
+        <p><code>xzcat arquivo.xz</code></p>
+        <p><code>tac arquivo</code></p>
+        <ul>Exibe da última linha para a primeira</ul>
+        <p><code>tac -s a arquivo</code></p>
+        <ul>Define string 'a' como quebra de linha e exibe o arquivo</ul>
+        <p><code>rm arquivo</code></p>
+        <ul>***** Apaga arquivo</ul>
+        <p><code>rm -R Pasta</code></p>
+        <ul>***** Apaga pasta</ul>
+        <p><code>rm -r Pasta</code></p>
+        <ul>Exige confirmação para remover</ul>
+        <p><code>rm -rf Pasta</code></p>
+        <ul>Remove sem perguntar</ul>
+        <p><code>rm -i pasta</code></p>
+        <p><code>rm -i -f pasta</code></p>
+        <ul>Remove sem perguntar</ul>
+        <p><code>rm -rf *</code></p>
+        <ul>Remove todos os arquivos da pasta</ul>
+        <p><code>rm -f .arquivooculto</code></p>
+        <ul>Remove arquivo oculto forçado</ul>
+        <p><code>rm -- -</code></p>
+        <p><code>rm '-'</code></p>
+        <ul>Remove arquivo iniciado com '-'</ul>
+        <ul>Entende que '-' não é um parâmetro</ul>
+        <ul>Vale também para '*' e '?'</ul>
+        <p><code>cp [origem] [destino]</code></p>
+        <ul>Copia arquivos</ul>
+        <p><code>cp -vfr * diretorio1/</code></p>
+        <ul>***** --verbose --forçado e recursivo</ul>
+        <p><code>cp -R</code></p>
+        <ul>***** Copia também dispositivos especiais e FIFOs, sockets, etc</ul>
+        <p><code>cp -r</code></p>
+        <ul>Sintaxe a mesma, só não copia os especiais</ul>
+        <p><code>cp -vs aaa zzz</code></p>
+        <ul>Cria link simbólico nos arquivos</ul>
+        <p><code>cp -u</code></p>
+        <ul>***** Torna a cópia repetitiva de um diretório [origem] [destino] mais rápida</ul>
+        <p><code>cp -x</code></p>
+        <p><code>cp -vxr</code></p>
+        <ul>Exclui partição do sistema para copiar</ul>
+        <p><code>cp -a</code></p>
+        <p><code>cp -d</code></p>
+        <p><code>cp -dpR</code></p>
+        <ul>Copia migrando de um ponto A para um ponto B</ul>
+        <p><code>mv arquivo_antigo arquivo_novo</code></p>
+        <ul>Copia apagando a origem</ul>
+        <ul>Renomeia arquivo</ul>
+        <ul>Move arquivo</ul>
+        <p><code>mv -i</code></p>
+        <ul>Pergunta se quer substituir o arquivo</ul>
+        <ul>Pergunta se quer sobrescrever</ul>
+        <h3>mv tem mesmos parâmetros de cp</h3>
+        <p><code>mv -u</code></p>
+        <ul>***** Move arquivos mais novos ou com mesma data de modificação</ul>
+        <ul>Só move quando a data for mais nova que o destino</ul>
+        <br>
+    </section>
+    <section id="Quarta_parte">
+        <h2>Quarta parte</h2>
+        <h3>Curingas</h3>
+        <ul>* significa todos</ul>
+        <ul>? significa um caracter</ul>
+        <ul>[a-z] significa um padrão (intervalo)</ul>
+        <ul>[sa] significa string</ul>
+        <ul>^ significa não (inverter)</ul>
+        <ul># significa comentário</ul>
+        <ul>Exemplo:</ul>
+        <p><code>ls x[za, zm]</code></p>
+        <br>
+        <h3>Comandos</h3>
+        <p><code>date</code></p>
+        <p><code>date -u</code></p>
+        <ul>Mostra o horário no fuso horário de Greenwich</ul>
+        <ul>GMT, UTC</ul>
+        <p><code>date -s</code></p>
+        <ul>Ajusta hora:minutos</ul>
+        <ul>hh:mm</ul>
+        <p><code>date mmddhh''aaaa</code></p>
+        <ul>' neste comando significa minutos</ul>
+        <p><code>mmddhh''aaaass</code></p>
+        <ul>mm significa mês</ul>
+        <ul>dd significa dia</ul>
+        <ul>hh significa hora</ul>
+        <ul>'' significa minuto</ul>
+        <ul>aaaa significa ano</ul>
+        <ul>ss significa segundo</ul>
+        <p><code>hwclock --systohc</code></p>
+        <ul>salva horário</ul>
+        <p><code>date +%d</code></p>
+        <p><code>date +%d%Y</code></p>
+        <p><code>date +%d%y</code></p>
+        <p><code>date +%d-%y</code></p>
+        <p><code>date +%d-%y-%m</code></p>
+        <p><code>date +%d-%m-Y</code></p>
+        <p><code>date +%d-%m-%Y</code></p>
+        <p><code>date +"%d-%m-%Y %T"</code></p>
+        <ul>YT traz hora completa</ul>
+        <p><code>date +"%d"</code></p>
+        <p><code>date +"%d %Y"</code></p>
+        <p><code>date "%d %y %j"</code></p>
+        <ul>j mostra número do dia no ano, 0 a 365</ul>
+        <p><code>date "%d %r"</code></p>
+        <ul>Mostra hora completa</ul>
+        <p><code>date "%d %r %p"</code></p>
+        <ul>Mostra hora no formato americano</ul>
+        <br>
+        <p><code>date --date='01234567890'</code></p>
+        <ul>UNIX time</ul>
+        <p><code>date --date='01'</code></p>
+        <p><code>date -u --date='01'</code></p>
+        <br>
+        <p><code>df</code></p>
+        <ul>Mostra o espaço livre em cada partição montada (em blocos)</ul>
+        <p><code>df -h</code></p>
+        <ul>Mostra em megas, gigas</ul>
+        <p><code>df -H</code></p>
+        <ul>Ao invés de blocos de 1024, utiliza blocos de 1000 (comercial)</ul>
+        <p><code>df -l</code></p>
+        <ul>Lista somente sistema de arquivos locais (não exibe via rede)</ul>
+        <p><code>df -m</code></p>
+        <ul>Saída direta em megabytes</ul>
+        <p><code>df -a</code></p>
+        <ul>Inclui pseudofilesystems do unix</ul>
+        <p><code>df -i</code></p>
+        <ul>Lista os inodes</ul>
+        <br>
+        <ul>/dev/shm e /run/lock</ul>
+        <ul>Dados de sessões de login</ul>
+        <ul>/dev</ul>
+        <ul>Sistema de arquivos pseudofs</ul>
+        <ul>/sys/fs/group</ul>
+        <ul>Limitação e gerenciamento de recursos da máquina</ul>
+        <ul>Limitação de recursos de processos</ul>
+        <ul>Extensivamente utilizado pelo doc Kubernetes</ul>
+        <ul>/run/user/1000</ul>
+        <ul>Alguns dados atuais da sessão de usuário</ul>
+        <br>
+        <p><code>id</code></p>
+        <ul>Traz dados da sessão logada</ul>
+        <p><code>mount</code></p>
+        <ul>***** também pode montar discos removíveis</ul>
+        <p><code>df -T</code></p>
+        <ul>Sistema de arquivos utilizados em cada partição</ul>
+        <p><code>df -Th</code></p>
+        <ul>***** Lista sistema de arquivos legíveis para humanos</ul>
+        <p><code>df -t</code></p>
+        <ul>Lista apenas sistema de arquivos que for especificado</ul>
+        <ul>Exemplos:</ul>
+        <p><code>df -Th -t ext4</code></p>
+        <p><code>df -aTh -t cgroup</code></p>
+        <p><code>df -P</code></p>
+        <ul>Saída em formato POSIX</ul>
+        <br>
+        <p><code>ln /bin/ls ls2</code></p>
+        <ul>Cria link de arquivo para arquivo (hard links)</ul>
+        <p><code>ls -s</code></p>
+        <ul>Cria link de arquivo para diretório</ul>
+        <ul>Resultado: arquivo convencional ou link simbólico</ul>
+        <p><code>ln -s /bin/ls ls-link</code></p>
+        <ul>Cria link simbolico para arquivo</ul>
+        <p><code>cp -l</code></p>
+        <ul>Ao invés de copiar os arquivos, cria um hardlink para eles</ul>
+        <ul>Exemplo:</ul>
+        <p><code>cp -rvl /usr /tmp/copia-usr</code></p>
+        <br>
+        <p><code>du</code></p>
+        <ul>Exibe ocupação do tamanho de cada arquivo na nossa partição montada</ul>
+        <p><code>du -Hs</code></p>
+        <ul>Exibe em formato legíveis para humanos (blocos de 1000)</ul>
+        <p><code>du -hs</code></p>
+        <ul>Exibe em blocos de 1024</ul>
+        <p><code>du -s</code></p>
+        <ul>Conta tudo e exibe sumarizado</ul>
+        <p><code>du -ks</code></p>
+        <ul>Exibe em KiloBytes</ul>
+        <p><code>du -ms</code></p>
+        <ul>Exibe em MegaBytes</ul>
+        <p><code>du -H</code></p>
+        <p><code>du -h</code></p>
+        <p><code>du -hc</code></p>
+        <ul>Adiciona o total no final</ul>
+        <br>
+        <p><code>find</code></p>
+        <ul>Localiza arquivos e diretórios no sistema</ul>
+        <p><code>find . -name ls</code></p>
+        <ul>*****</ul>
+        <p><code>sudo apt-get install mc</code></p>
+        <ul>Instala o editor de texto MC</ul>
+        <p><code>find . -type d -name mc</code></p>
+        <ul>Traz apenas as pastas</ul>
+        <p><code>find . -type f -name mc</code></p>
+        <ul>Traz apenas arquivos</ul>
+        <p><code>find /var -type f -name mc</code></p>
+        <ul>Pesquisa dentro de /var</ul>
+        <p><code>find /usr -maxdepth 2 -type f -name mc</code></p>
+        <ul>Dois níveis</ul>
+        <p><code>find /usr -mindepth 4 -type f -name mc</code></p>
+        <ul>Traz binários em 4 subpastas</ul>
+        <p><code>find /etc -mtime -1</code></p>
+        <ul>***** Traz todos arquivos modificados a 1 dia atrás</ul>
+        <ul>CREATED, MODIFIED, ACCESS</ul>
+        <p><code>find /etc -amin -10</code></p>
+        <p><code>find /etc -cmin -1</code></p>
+        <p><code>find /tmp -type f -cmin -1</code></p>
+        <ul>Parâmetro -cmin 1, para o último minuto</ul>
+        <ul>Parâmetro -ctime 1, para o último dia, um dia atrás</ul>
+        <ul>Parâmetro -ctime +1, a mais de um dia</ul>
+        <br>
+        <p><code>find /usr -mount -iname</code></p>
+        <ul>Traz a pesquisa apenas nos pontos montados</ul>
+        <p><code>find /usr -gid 0</code></p>
+        <ul>Pesquisa para grupo 0, 1000</ul>
+        <p><code>find /home -gid 1000</code></p>
+        <ul>Pesquisa pastas do meu usuário</ul>
+        <p><code>find /home -user nome_de_usuario</code></p>
+        <ul>***** </ul>
+        <p><code>find /home -group nome_de_usuario</code></p>
+        <p><code>find /usr -links 2</code></p>
+        <ul>Traz links como referência (2,3,5)</ul>
+        <p><code>find /usr -size -1000</code></p>
+        <ul>Por tamanho (-1000) (+1000) em blocos</ul>
+        <p><code>find /usr -size -1000k</code></p>
+        <ul>Por tamanho em KiloBytes</ul>
+        <p><code>find /usr -size -1000c</code></p>
+        <ul>Por tamanho em bytes</ul>
+        <p><code>find /usr -type d</code></p>
+        <ul>Pesquisa por pasta</ul>
+        <ul>d para pasta</ul>
+        <ul>c para caracter</ul>
+        <ul>d para blocos</ul>
+        <ul>s para sockets</ul>
+        <ul>l para link simbólico</ul>
+        <ul>p para ?</ul>
+        <br>
+        <p><code>free</code></p>
+        <ul>Exibe memória livre do sistema operacional: RAM física, swap, RSS (memória residente)</ul>
+        <p><code>free --kilo</code></p>
+        <p><code>free --mega</code></p>
+        <p><code>free --kibi</code></p>
+        <p><code>free --mebi</code></p>
+        <p><code>free --gibi</code></p>
+        <p><code>free --tebi</code></p>
+        <p><code>free --pebi</code></p>
+        <p><code>free --mega -s 1</code></p>
+        <ul>***** Traz a memória a cada 1 segundo</ul>
+        <p><code>cat /proc/meminfo</code></p>
+        <ul>***** Detalhamento da memória usada no sistema</ul>
+        <p><code>grep</code></p>
+        <ul>***** Pesquisa por extensões dentro de um determinado arquivo</ul>
+        <p><code>grep 'root' /etc/passwd</code></p>
+        <ul>Traz as linhas que tem ROOT dentro desse arquivo</ul>
+        <p><code>cat /etc/passwd</code></p>
+        <p><code>grep 'man-data' /etc/passwd</code></p>
+        <p><code>grep -v</code></p>
+        <ul>Inverte a busca, traz todas linhas exceto a procurada</ul>
+        <p><code>grep -f /pasta/arquivo /pasta/arquivo</code></p>
+        <p><code>grep -i</code></p>
+        <ul>***** Ignora maiúsculas e minúsculas</ul>
+        <p><code>grep -iE '^www-data' /etc/passwd</code></p>
+        <p><code>grep -iE '^www-data.*nologin$' /etc/passwd</code></p>
+        <p><code>grep -iF '.*' /etc/passwd</code></p>
+        <ul>Faz pesquisa de texto utilizando caracteres especiais</ul>
+        <p><code>echo "linha nova" >> /pasta/arquivo</code></p>
+        <ul>*****</ul>
+        <p><code>grep -ri 'Foca02' .</code></p>
+        <ul>Pesquisa recursiva CaseSensitive</ul>
+        <p><code>grep -ril 'Foca02' .</code></p>
+        <ul>***** Pesquisa recursiva CaseSensitive indicando os arquivos</ul>
+        <p><code>grep -rin 'Foca02' .</code></p>
+        <ul>Indica o número da linha que contém a expressão</ul>
+        <br>
+        <p><code>head /etc/passwd</code></p>
+        <ul>Exibe as 10 primeiras linhas</ul>
+        <p><code>head -n 3 /etc/passwd</code></p>
+        <p><code>head -c 50 /etc/passwd</code></p>
+        <ul>Exibe primeiros 50 bytes do arquivo</ul>
+        <br>
+        <p><code>nl /etc/passwd</code></p>
+        <ul>Numera quantidade de linhas do arquivo</ul>
+        <p><code>nl -f a -i 3 /etc/passwd</code></p>
+        <ul>Pula de três em três</ul>
+        <p><code>nl -f a -i 2 /etc/passwd</code></p>
+        <ul>Pula de dois em dois</ul>
+        <p><code>cat /pasta/arquivo | more</code></p>
+        <ul>*</ul>
+        <p><code>cat /pasta/arquivo | less</code></p>
+        <ul>* less Pesquisa dentro do arquivo, digite: / palavra</ul>
+        <p><code>sort arquivo.txt</code></p>
+        <p><code>cat /pasta/arquivo | sort</code></p>
+        <p><code>cat /pasta/arquivo | sort -r</code></p>
+        <ul>Parâmetro -r inverte</ul>
+        <p><code>cat /pasta/arquivo | sort -n</code></p>
+        <ul>Classifica strings, depois números</ul>
+        <p><code>sort lista.txt -c</code></p>
+        <ul>Retorna lista desordenada ou não</ul>
+        <p><code>sort -n -c</code></p>
+        <p><code>sort +1</code></p>
+        <ul>Ordena pela segunda coluna</ul>
+        <p><code>sort +1 -t ";"</code></p>
+        <ul>Ponto e vírgula é delimitador</ul>
+        <p><code>sort -k 1</code></p>
+        <ul>Ordena pelo primeiro campo</ul>
+        <p><code>sort -k 2</code></p>
+        <ul>Ordena pelo segundo campo</ul>
+        <br>
+        <p><code>tail /pasta/arquivo</code></p>
+        <ul>Exibe 10 últimas linhas</ul>
+        <ul>Permite visualizar final de arquivo em um sistema operacional</ul>
+        <p><code>tail -n 4 /pasta/arquivo</code></p>
+        <ul>Exibe últimas 4 linhas</ul>
+        <p><code>cat /etc/passwd | sort -t ":" +2 -n</code></p>
+        <p><code>cat /etc/passwd | sort -t ":" +2 -n | tail -n 1</code></p>
+        <ul>Traz maior ID (serve para auditoria de sistema)</ul>
+        <p><code>cat /etc/passwd | sort -t ":" +2 -n | head -n 1</code></p>
+        <p><code>tail -f /var/log/auth.log</code></p>
+        <ul>Segue arquivo para observar modificações feitas</ul>
+        <br>
+        <p><code>time ls</code></p>
+        <ul>Mostra o tempo de execução do time ls</ul>
+        <p><code>time find / -name giropops</code></p>
+        <ul>Mostra o tempo que demorou para percorrer para procurar o giropops</ul>
+        <br>
+        <p><code>touch arquivo</code></p>
+        <ul>***** Comando para criar um arquivo vazio</ul>
+        <p><code>touch -t 10120815 arquivo</code></p>
+        <ul>Muda tempo de modificação</ul>
+        <p><code>touch -a -t 10120815 arquivo</code></p>
+        <ul>Muda tempo de acesso</ul>
+        <p><code>find /pasta -amin -1</code></p>
+        <ul>Exibe acessos no último minuto</ul>
+        <p><code>find /pasta -mmin -1</code></p>
+        <ul>Exibe modificações no último minuto</ul>
+        <br>
+        <p><code>uptime</code></p>
+        <ul>Mostra tempo</ul>
+        <br>
+        <p><code>dmesg</code></p>   
+        <ul>Exibe as mensagens do ring buffer do Kernel</ul>
+        <ul>É uma área que existe para armazenar as últimas mensagens no contexto do Kernel</ul>
+        <ul>Por padrão exibe 64 Kbytes, pode ser customizado na arquitetura de multi processadores durante a compilação do Kernel</ul>
+        <p><code>dmesg -t | grep enp0s3</code></p>
+        <p><code>dmesg --color=never</code></p>
+        <p><code>dmesg --color=auto</code></p>
+        <p><code>dmesg -w</code></p>
+        <ul>Vai ficar seguindo as mensagens do Kernel</ul>
+        <p><code>dmesg -x</code></p>
+        <ul>Decodifica algumas mensagens em texto legível</ul>
+        <p><code>dmesg -T</code></p>
+        <ul>Pega a time stamp do boot e ela fica legível com data e hora</ul>
+        <p><code>dmesg -c</code></p>
+        <ul>Limpa a mensagem do Kernel do buffer e mostra as novas</ul>
+        <p><code>talk</code></p>
+        <p><code>mesg y</code></p>
+        <p><code>echo 'mensagem'</code></p>
+        <ul>Exibe a palavra mensagem</ul>
+        <p><code>echo -n</code></p>
+        <ul>Não faz a quebra de linha</ul>
+        <p><code>echo -e</code></p>
+        <ul>Habilita caracteres especiais</ul>
+        <br>
+        <p><code>su</code></p>
+        <ul>Pede o login do super usuário</ul>
+        <p><code>su -</code></p>
+        <ul>Elimina variáveis de ambiente e inicia um ambiente novo</ul>
+        <p><code>/bin/su -</code></p>
+        <ul>Modo correto de chamar o super usuário (segurança)</ul>
+        <p><code>su - www-data -s /bin/bash</code></p>
+        <ul>Para logar como www-data</ul>
+        <br>
+        <p><code>sudo id</code></p>
+        <p><code>sudo su</code></p>
+        <p><code>adduser usuario sudo</code></p>
+        <ul>***** Dá privilégios de root a determinado superusuário</ul>
+        <ul>***** Remove privilégios de super usuário</ul>
+        <br>
+        <p><code>tail -f /var/log/auth.log</code></p>
+        <ul>***** Verifica incidentes no /etc/sudoers.d</ul>
+        <br>
+        <p><code>sync</code></p>
+        <ul>Permite gravar buffer do kernel no disco</ul>
+        <br>
+        <p><code>uname</code></p>
+        <ul>Retorna nome do nosso sistema operacional</ul>
+        <p><code>uname -a</code></p>
+        <ul>Retorna nome, versão do kernel, arquitetura, compilação</ul>
+        <p><code>uname -s</code></p>
+        <ul>Traz o Kernel</ul>
+        <p><code>uname -n</code></p>
+        <ul>Traz o nome da máquina na rede</ul>
+        <p><code>hostname</code></p>
+        <p><code>uname -r</code></p>
+        <ul>Versão atual do Kernel</ul>
+        <p><code>uname -v</code></p>
+        <ul>Data que o Kernel foi compilado</ul>
+        <p><code>uname -m</code></p>
+        <ul>Mostra a arquitetura utilizada. ARM para Raspberry Pi</ul>
+        <p><code>reboot</code></p>
+        <ul>Reinicia</ul>
+        <p><code>/bin/su - root</code></p>
+        <br>
+        <p><code>systemctl reboot</code></p>
+        <ul>Para fazer reboot sendo usuário</ul>
+        <p><code>reboot -f</code></p>
+        <ul>Reinicia a máquina forçado</ul>
+        <br>
+        <p><code>echo b > /proc/sysrq-trigger</code></p>
+        <ul>***** Para reiniciar o computador em último caso</ul>
+        <br>
+        <p><code>halt</code></p>
+        <ul>Desliga</ul>
+        <p><code>systemctl halt</code></p>
+        <p><code>echo o > /proc/sysrq-trigger</code></p>
+        <ul>***** Travou o modo gráfico e precisa desligar</ul>
+        <br>
+        <p><code>shutdown -h 09:40</code></p>
+        <ul>Programa horário de desligamento</ul>
+        <p><code>shutdown -h +10</code></p>
+        <ul>Desliga daqui a 10 minutos</ul>
+        <p><code>shutdown -c</code></p>
+        <ul>Cancela desligamento</ul>
+        <p><code>wc /etc/passwd</code></p>
+        <ul>***** Word count (mostra linhas, palavras, caracteres)</ul>
+        <p><code>wc -l arquivo</code></p>
+        <ul>Apenas número de linhas</ul>
+        <p><code>wc -c arquivo</code></p>
+        <ul>Apenas número de bytes, caracteres</ul>
+        <p><code>seq 10</code></p>
+        <ul>Imprime sequência de números de 1 a 10</ul>
+        <p><code>seq 2 10</code></p>
+        <p><code>seq 2 2 10</code></p>
+        <ul>seq [início] [passo] [final], incrementa 2</ul>
+        <p><code>seq -w</code></p>
+        <ul>Ordena começando pelo zero</ul>
+    </section>
+    <section id="Quinta_parte">
+        <h2>Quinta parte</h2>
+        <p><code>chattr</code></p>
+        <p><code>lsattr</code></p>
+        <ul>Permite atributos do sistema de arquivos do sistema operacional Linux</ul>
+        <ul>Também diretórios</ul>
+        <ul>Permite listar e alterar atributos</ul>
+        <p><code>lsattr</code></p>
+        <ul>------------e---- ./arquivo</ul>
+        <ul>e significa extends, ext4</ul>
+        <p><code>chattr +i</code></p>
+        <ul>Atributo imutável, não pode apagar o arquivo, nem alterar</ul>
+        <p><code>chattr -i</code></p>
+        <ul>Retira o atributo imutável</ul>
+        <p><code>lsattr Pasta -d</code></p>
+        <ul>Lista os atributos da pasta</ul>
+        <p><code>chattr -i pasta/</code></p>
+        <p><code>chattr -R -i pasta/</code></p>
+        <ul>Recursivo</ul>
+        <p><code>lsattr pasta/</code></p>
+        <p><code>chattr +a arquivo</code></p>
+        <ul>Põe arquivo ou diretório em modo append</ul>
+        <p><code>chattr +a pasta</code></p>
+        <ul>Impede remoção do arquivo mas permite alteração</ul>
+        <p><code>chattr =ai *</code></p>
+        <p><code>chattr =aie *</code></p>
+        <p><code>chattr +c arquivo</code></p>
+        <ul>Compactado</ul>
+        <p><code>chattr -c arquivo</code></p>
+        <ul>Retira compactado</ul>
+        <p><code>chattr +s arquivo</code></p>
+        <ul>Marca arquivo como deleção segura</ul>
+        <p><code>chattr +S arquivo</code></p>
+        <ul>Permite fazer o sync do arquivo</ul>
+        <p><code>chattr +D pasta/</code></p>
+        <ul>Qualquer arquivo será gravado sem passar pelo cache</ul>
+        <p><code>chattr +d pasta</code></p>
+        <ul>Não inclui no backup do programa dump</ul>
+        <p><code>chattr -d pasta</code></p>
+        <ul>Lida com atributo no backup do programa dump</ul>
+        <br>
+        <p><code>cut -d ":" -f 1 /pasta/arquivo</code></p>
+        <ul>O comando corta um pedaço do arquivo para exibir apenas uma parte do conteúdo</ul>
+        <ul>dois pontos é o delimitador, parâmetro -d de delimitador, 1 significa campo</ul>
+        <p><code>cut -d ":" -f 1,7 /etc/passwd</code></p>
+        <p><code>cut -d ":" -f 1-3,7 /etc/passwd</code></p>
+        <p><code>cut -b 1-4 /etc/passwd</code></p>
+        <ul>Sintaxe de bytes</ul>
+        <p><code>cut -c 1-4 /etc/passwd</code></p>
+        <ul>Sintaxe de caracteres, não considera espaços</ul>
+        <p><code>cmp arquivo1 arquivo2</code></p>
+        <p><code>cmp -s arquivo1 arquivo2</code></p>
+        <ul>Retorna se foi comparado com sucesso ou não</ul>
+        <p><code>diff arquivo1 arquivo2</code></p>
+        <ul>Diferenças</ul>
+        <p><code>diff -u arquivo1 arquivo2</code></p>
+        <ul>Diferenças legível</ul>
+        <ul>Formato de comparação unificado</ul>
+        <p><code>diff -ru pasta1 pasta2</code></p>
+        <ul>Compara pasta com outra</ul>
+        <ul>Parâmetro -r significa recursivo</ul>
+        <h3>Exemplo de comparação usando o comando diff</h3>
+        <p><code>mkdir diff1 diff2</code></p>
+        <p><code>cd diff1</code></p>
+        <p><code>echo conteudo >> arquivo1</code></p>
+        <p><code>echo conteudo >> arquivo2</code></p>
+        <p><code>echo conteudo >> arquivo3</code></p>
+        <p><code>cd ../diff2</code></p>
+        <p><code>echo conteudo >> arquivo1</code></p>
+        <p><code>echo conteudo >> arquivo2</code></p>
+        <p><code>echo conteudo >> arquivo3</code></p>
+        <p><code>echo conteudo2 >> arquivo1</code></p>
+        <p><code>echo conteudo2 >> arquivo2</code></p>
+        <p><code>cd ..</code></p>
+        <p><code>diff -ru diff1 diff2</code></p>
+        <ul>Exibe as diferenças por arquivo</ul>
+        <ul>Mesmo conceito do git</ul>
+        <ul>diff1 significa versão anterior da aplicação</ul>
+        <ul>diff2 significa versão atual da aplicação</ul>
+        <h3>Criando patch</h3>
+        <p><code>diff -ru diff1 diff2 >> diferencas.patch</code></p>
+        <p><code>cat diferencas.patch</code></p>
+        <br>
+        <p><code>cd diff1</code></p>
+        <p><code>apt-get install patch</code></p>
+        <p><code>patch -p1 -N &lt; ../tmp/diferencas.patch</code></p>
+        <ul>fez o patch no arquivo1 e arquivo2</ul>
+        <ul>parâmetro -p1 significa o nível da pasta onde o patch foi aplicado</ul>
+        <ul>parâmetro N serve para não desfazer patches que já foram aplicados</ul>
+        <p><code>patch -p1 -R &lt; /tmp/</code></p>
+        <ul>Desfazer o patch aplicado</ul>
+        <h3>Exemplo de atualização de Patch do Kernel do Linux</h3>
+        <p><code>su -</code></p>
+        <p><code>cd /tmp</code></p>
+        <p><code>wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz</code></p>
+        <ul>Baixa o código fonte do Linux</ul>
+        <p><code>wget https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.0.10-11.xz</code></p>
+        <ul>Baixa o patch do kernel</ul>
+        <p><code>ls -l</code></p>
+        <p><code>tar -Jxvf linux-6.0.10.tar.xz</code></p>
+        <ul>Comando 'tar' descompacta</ul>
+        <ul>Parâmetro -J serve para descompactar arquivos 'xz'</ul>
+        <ul>Parâmetro x significa eXtrair</ul>
+        <ul>Parâmetro v significa modo verboso, para mostrar os arquivos que estão sendo descompactados</ul>
+        <ul>Parâmetro f serve para especificar qual arquivo eu quero descompactar</ul>
+        <p><code>cd /tmp/linux-6.0.10</code></p>
+        <p><code>du -hs linux-6.0.10</code></p>
+        <ul>Mostra o tamanho total do arquivo descompactado</ul>
+        <p><code>head Makefile</code></p>
+        <p><code>du -hs</code></p>
+        <p><code>cd ..</code></p>
+        <p><code>ls -l</code></p>
+        <p><code>xz -d patch-6.0.10-11.xz</code></p>
+        <p><code>ls -l</code></p>
+        <p><code>cd linux-6.0.10</code></p>
+        <p><code>patch -p1 -N &lt; /tmp/patch-6.0.10-11</code></p>
+        <p><code>head Makefile</code></p>
+        <ul>Conseguimos aplicar o patch do Linux na pasta do código fonte do Kernel</ul>
+        <br>
+        <h3>Mais comandos</h3>
+        <p><code>whereis ls</code></p>
+        <ul>Permite localizar um arquivo que contém a página de manual mais completa de ls</ul>
+        <p><code>zless /usr/share/man/man1/ls.1.gz</code></p>
+        <ul>zless descompactar arquivos com extensão gz</ul>
+        <p><code>man ls</code></p>
+        <ul>Abre o arquivo de página de manual</ul>
+        <br>
+        <p><code>which ls</code></p>
+        <ul>***** Permite localizar onde o binário se encontra no sistema operacional</ul>
+        <br>
+        <h3>Gerenciamento de processos</h3>
+        <p><code>mc -b /etc/passwd</code></p>
+        <ul>Abre mceditor em preto e branco</ul>
+        <p><code>ps | grep</code></p>
+        <ul>Verificar processos abertos na sessão</ul>
+        <p><code>ps</code></p>
+        <ul>Mostra processos que estão abertos apenas neste terminal</ul>
+        <p><code>ps a</code></p>
+        <ul>Mostra todos os processos em execução nos terminais</ul>
+        <h4>PID (Process Identificator)</h4>
+        <ul>Buscar binários no sistema operacional</ul>
+        <p><code>echo $PATH</code></p>
+        <ul>Significa caminho</ul>
+        <ul>Lista de caminhos separados por ":"</ul>
+        <p><code>which ls</code></p>
+        <ul>Como ele achou o comando ls?</ul>
+        <ul>Primeiramente ele pesquisou no primeiro campo</ul>
+        <p><code>echo $PATH | cut -d ":" -f 1</code></p>
+        <ul>Depois ele pesquisou no segundo campo</ul>
+        <p><code>echo $PATH | cut -d ":" -f 2</code></p>
+        <ul>Então ele achou o binário, assim que encontrado ele interrompe a pesquisa</ul>
+        <ul>PATH do root é diferente (não tem games)</ul>
+        <p><code>PATH=$PATH:/usr/bin</code></p>
+        <p><code>echo $PATH</code></p>
+        <ul>Acrescenta o diretório /usr/sbin na variável PATH</ul>
+        <br>
+        <h3>Procedimento para modificar o arquivo su</h3>
+        <p><code>which su</code></p>
+        <ul>Ver onde fica o binário "su"</ul>
+        <h4>Criar no /home uma pasta /bin e no /home</h4>
+        <p><code>mkdir bin</code></p>
+        <p><code>PATH=~/bin:$PATH</code></p>
+        <p><code>echo $PATH</code></p>
+        <h4>Criar um arquivo chamado su</h4>
+        <ol>
+        <li>#!/bin/bash</li> 
+        <li>echo -n "Senha: "</li>
+        <li>read var</li>
+        <li>echo "A senha digitada foi $var"</li>
+        </ol>
+        <p><code>which su</code></p>
+        <ul>Agora vai buscar 'su' do /home</ul>
+        <br>
+        <h3>Execução de programas</h3>
+        <p><code>sleep 10</code></p>
+        <ul>Espera para retornar para linha de comando</ul>
+        <p><code>sleep 10 &</code></p>
+        <p><code>sleep 100 &</code></p>
+        <p><code>cat /proc/numero_do_PID/cmdline</code></p>
+        <p><code>jobs</code></p>
+        <ul>Exibe os programas em execução no segundo plano</ul>
+        <p><code>fg 1</code></p>
+        <ul>Traz o programa em execução para primeiro plano</ul>
+        <p>CTRL + Z<p>
+        <ul>Pára o programa em execução</ul>
+        <p><code>bg 1</code></p>
+        <ul>Joga o programa em execução parado para segundo plano</ul>
+        <p>CTRL + C</p>
+        <ul>Mata execução do programa que está no primeiro plano</ul>
+        <p><code>kill %1</code></p>
+        <ul>Mata execução do programa que está no 'job 1'</ul>
+        <p><code>ps</code></p>
+        <p><code>ps -ax</code></p>
+        <ul>Lista processos de todos os usuários</ul>
+        <p><code>ps -axu</code></p>
+        <ul>Lista também usuários</ul>
+        <ul>VS2 &#8594; tamanho virtual; RSS &#8594; tamanho residente</ul>
+        <ul>STAT &#8594; S &#8594; Soneca não interrompível, processo importante sendo executado</ul>
+        <ul>STAT &#8594; D &#8594; Entrada e saída de disco, leitura de disco</ul>
+        <ul>STAT &#8594; I &#8594; Idle ocioso</ul>
+        <ul>STAT &#8594; R &#8594; Rodando, Run</ul>
+        <ul>STAT &#8594; Z &#8594; Processo zumbi, processo que perdeu a referência do processo pai</ul>
+        <ul>STAT &#8594; X &#8594; Nunca deve ser exibido, processo que foi morto</ul>
+        <br>
+        <p><code>ps -axm</code></p>
+        <ul>Mostra procesos de memória</ul>
+        <p><code>ps -f</code></p>
+        <p><code>ps -axf</code></p>
+        <ul>Mostra os processos em árvore</ul>
+        <p><code>ps -axew</code></p>
+        <ul>Mostra as variáveis de ambiente utilizadas no comando com wrap</ul>
+        <p><code>ps ax --sort=pid</code></p>
+        <ul>Classifica por PID</ul>
+        <p><code>ps ax --sort=pid | head</code></p>
+        <p><code>ps ax --sort=rss</code></p>
+        <ul>Classifica por memória residente</ul>
+        <p><code>pss ax --sort=tty</code></p>
+        <p><code>pidof cron</code></p>
+        <ul>***** Mostra o PID do processo cron</ul>
+        <p><code>pstree</code></p>
+        <ul>Árvore de processos</ul>
+        <p><code>pstree -A</code></p>
+        <ul>Árvore de processos usando caracteres ASCII</ul>
+        <p><code>pstree -c</code></p>
+        <ul>Mostra toda estrutura  incluindo processos pai</ul>
+        <p><code>pstree -h</code></p>
+        <ul>Destaca processos pai e os antecessores</ul>
+        <p><code>pstree -h -p</code></p>
+        <ul>Exibe também o PID</ul>
+        <p><code>pstree -p -H 352</code></p>
+        <ul>Exibe um processo especial</ul>
+        <p><code>pstree -p -H 433 -u</code></p>
+        <ul>Mostra o PID do processo que está em Excel</ul>
+        <p><code>pstree -p -H 433 -g</code></p>
+        <ul>Mostra o grupo de execução</ul>
+        <br>
+        <p><code>kill [PID]</code></p>
+        <ul>Encerra o processo</ul>
+        <p><code>kill -15 [PID]</code></p>
+        <ul>Fechar de forma amigável</ul>
+        <p><code>kill -9 [PID}</code></p>
+        <ul>Mata o programa sem perguntar</ul>
+        <p><code>kill -HUP [PID}</code></p>
+        <ul>Faz o processo reler o modo de sistema operacional sem finalizar</ul>
+        <p><code>kill -1 [PID]</code></p>
+        <ul>Equivalente ao kill -HUP</ul>
+        <p><code>kill -KILL [PID]</code></p>
+        <ul>Equivalente ao kill -9</ul>
+        <p><code>kill -TERM [PID]</code></p>
+        <ul>Equivalente ao kill -15</ul>
+        <p><code>pgrep -u root sshd</code></p>
+        <ul>Lista processos do ROOT que tem SSHD</ul>
+        <p><code>pgrep sshd</code></p>
+        <ul>Pesquisa SSHD em todos os processos</ul>
+        <p><code>pkill -u usuario sleep</code></p>
+        <ul>Mata processo especificado de usuário</ul>
+        <p><code>killall -u usuario sleep</code></p>
+        <ul>Mata de acordo com o nome</ul>
+        <p><code>killall5 -9</code></p>
+        <ul>***** Mata todos os processos com ROOT</ul>
+        <ul>Perde o acesso remoto da máquina</ul>
+        <p><code>nohup sleep 200 &</code></p>
+        <ul>Protege um processo em execução para que ele não seja afetado por sinais de interrupção. Exemplo: exceto -9 e -15</ul>
+        <br>
+        <p><code>top</code></p>
+        <ul>***** Mostra estado de execução dos processos na máquina</ul>
+        <p><code>SHIFT + M</code></p>
+        <ul>Classifica por memória</ul>
+        <p><code>M</code></p>
+        <ul>Muda a barra</ul>
+        <p><code>F</code></p>
+        <ul>Traz tela descritiva. A (desce), W (sobe)</ul>
+        <p><code>Q</code></p>
+        <ul>Retorna a listagem</ul>
+        <p><code>K</code></p>
+        <ul>Pergunta qual processo quer matar</ul>
+        <p><code>D &#8594; 1</code></p>
+        <ul>Muda o delay, atualiza a cada 1 segundo</ul>
+        <p><code>SHIFT + W</code></p>
+        <ul>Salva a configuração no HOME</ul>
+        <br>
+        <p><code>top -i</code></p>
+        <ul>Ignora processos zumbis</ul>
+        <p><code>top -c</code></p>
+        <ul>Mostra linha de comando completa. Pode apertar 'c' dentro do TOP</ul>
+        <br>
+        <p><code>nice -n 10 sleep 1000</code></p>
+        <ul>Determina qual prioridade um programa ou um comando pode ser executado no sistema operacional. Varia de -20 a 19</ul>
+        <ul>Prioridades abaixo de zero são permitidas apenas para o ROOT</ul>
+        <p><code>renice -n 10 -p 597</code></p>
+        <ul>Processo será executado com prioridade nova (10)</ul>
+        <p><code>renice -n 10 -u usuario</code></p>
+        <p><code>renice -n 10 -g usuario</code></p>
+        <br>
+        <p><code>tload</code></p>
+        <ul>***** Visualização gráfica de processos. &#8594; Q para sair</ul>
+        <p><code>vmstat</code></p>
+        <ul>Visualização dos parâmetros do sistema operacional linha a linha</ul>
+        <p><code>vmstat 1</code></p>
+        <ul>Atualiza a cada 1 segundo</ul>
+        <br>
+        <h3>Multiplexador de terminais</h3>
+        <br>
+        <p><code>apt install screen</code></p>
+        <p><code>screen</code></p>
+        <ul>***** Cria várias telas dentro do mesmo terminal</ul>
+        <p><code>CTRL + A</code></p>
+        <ul>Mostra as telas, atalhos internos</ul>
+        <p><code>CTRL + A, W</code></p>
+        <ul>Mostra quantas screens tem</ul>
+        <p><code>CTRL + A, C</code></p>
+        <ul>Cria tela dentro do mesmo terminal</ul>
+        <p><code>CTRL + A, A</code></p>
+        <ul>Alterna entre as telas criadas</ul>
+        <p><code>CTRL + A, 0</code></p>
+        <ul>Vai para a screen zero</ul>
+        <p><code>CTRL + A, 1</code></p>
+        <ul>Vai para a screen um e assim por diante</ul>
+        <p><code>CTRL + A, D</code></p>
+        <ul>Detachar, desconectar da screen</ul>
+        <p><code>screen -ls</code></p>
+        <ul>Lista processos dentro da screen</ul>
+        <p><code>screen -x</code></p>
+        <ul>Reconecto na minha screen</ul>
+        <br>
+        <p><code>apt-get install tmux</code></p>
+        <p><code>tmux new</code></p>
+        <p><code>CTRL + B</code></p>
+        <ul>Mostra as telas, atalho interno</ul>
+        <p><code>CTRL + B, C</code></p>
+        <ul>Cria uma nova tela</ul>
+        <p><code>CTRL + B, 0</code></p>
+        <ul>Vai para a tela zero</ul>
+        <p><code>CTRL + B, D</code></p>
+        <ul>Desconecta</ul>
+        <br>
+        <p><code>tmux ls</code></p>
+        <ul>Lista as sessões tmux que estão criadas</ul>
+        <p><code>tmux attach</code></p>
+        <ul>Para reconectar</ul>
+        <p><code>CTRL + B, SHIFT + "</code></p>
+        <ul>Divide a tela horizontalmente</ul>
+        <p><code>CTRL + B, seta para cima</code></p>
+        <ul>Alterna entre tela</ul>
+        <p><code>CTRL + B, seta para baixo</code></p>
+        <p><code>exit</code></p>
+        <ul>Fecha a tela de baixo</ul>
+        <p><code>CTRL + B, sinal de %</code></p>
+        <ul>Divide a tela verticalmente</ul>
+        <p><code>CTRL + B, aspas duplas</code></p>
+        <ul>Redivide a tela horizontalmente</ul>
+        <p><code>CTRL + B, seta para esquerda</code></p>
+        <ul>Alterna tela</ul>
+    </section>
+    <section id="Comandos_do_Linux_para_Windows">
+        <h2>Comandos do Linux para Windows</h1>
+        <h2>Comandos do Linux para MS-DOS</h1>
+        <p><code>chmod</code></p>
+        <ul>attrib</ul>
+        <p><code>tar</code></p>
+        <ul>backup </ul>
+        <p><code>cd</code></p>
+        <ul>cd </ul>
+        <p><code>cd ..</code></p>
+        <ul>cd..</ul>
+        <p>cd /</p>
+        <ul>cd\</ul>
+        <p><code>date</code></p>
+        <ul>date</ul>
+        <p><code>ls</code></p>
+        <ul>dir</ul>
+        <p><code>clear</code></p>
+        <ul>cls </ul>
+        <p><code>cp</code></p>
+        <ul>copy</ul>
+        <p><code>rm</code></p>
+        <ul>del</ul>
+        <p><code>rm -R</code></p>
+        <ul>deltree</ul>
+        <p><code>nano</code></p>
+        <ul>edit</ul>
+        <p><code>exit</code></p>
+        <ul>exit</ul>
+        <p><code>fdformat</code></p>
+        <ul>format</ul>
+        <p><code>ip a</code></p>
+        <ul>ipconfig</ul>
+        <p><code>mkdir</code></p>
+        <ul>md</ul>
+        <p><code>ls | more</code></p>
+        <ul>dir /p</ul>
+        <p><code>mv</code></p>
+        <ul>move</ul>
+        <p><code>mv</code></p>
+        <ul>rename</ul>
+        <p><code>netstat</code></p>
+        <ul>netstat</ul>
+        <p><code>ping</code></p>
+        <ul>ping</ul>
+        <p><code>rmdir</code></p>
+        <ul>rmdir</ul>
+        <p><code>time</code></p>
+        <ul>time</ul>
+        <p><code>traceroute</code></p>
+        <ul>tracetr</ul>
+        <p><code>cat | less</code></p>
+        <ul>type</ul>
+        <p><code>startx</code></p>
+        <ul>win</ul>
+        <p><code>cp -R</code></p>
+        <ul>xcopy</ul>
+    </section>
+    <section id="Sexta_parte">
+        <h2>Sexta parte</h2>
+        <h3>Discos e partições</h3>
+        <p><code>df -hT -t ext4</code></p>
+        <ul>Lista os sistemas de arquivos ext4</ul>
+        <h4>Comandos para uso de programas de partição de discos (Obrigatório ter acesso ao root)</h4>
+        <p><code>su -</code></p>
+        <p><code>cd /dev</code></p>
+        <p><code>ls -a sd*</code></p>
+        <ul>Lista os discos do sistema (primeira letra 'b' se refere ao dispositivo de blocos)</ul>
+        <p><code>fdisk /dev/sda</code></p>
+        <ul>Entra no particionador Linux, aperte 'p' ENTER para listar as partições do disco</ul>
+        <ul>digite 'quit' ENTER para sair</ul>
+        <ul>opção 'M', help do fdisk</ul>
+        <p><code>fdisk -l</code></p>
+        <ul>***** Lista os discos (dispositivos), todos</ul>
+        <p><code>fdisk -l /dev/sda</code></p>
+        <ul>Lista as partições que estão no primeiro disco</ul>
+        <p><code>fdisk -l /dev/sdb</code></p>
+        <ul>Lista as partições que estão no segundo disco</ul>
+        <p><code>fdisk /dev/sdb</code></p>
+        <ul>Entra no particionador para particionar o disco 'b'</ul>
+        <ul>opção 'p' para ver os discos<ul>
+        <ul>opção 'o' para criar um rótulo DOS com identificador</ul>
+        <ul>opção 'n' para definir a partição</ul>
+        <ul>Escolher o número da partição de '1', '2',',3' ou' '4'</ul>
+        <ul>ENTER para definir o primeiro setor</ul>
+        <ul>exemplo: opção '+400M' para definir último setor</ul>
+        <ul>opção 't'</ul>
+        <ul>opção 'L' para listar tipos de partição</ul>
+        <ul>opção '82' para partição Linux Swap</ul>
+        <ul>opção 'w' para gravar a tabela de partição definida</ul>
+        <br>
+        <p><code>mkfs.ext3 /dev/sdb1</code></p>
+        <ul>***** Formatar a partição (tipo ext3)</ul>
+        <p><code>mkswap /dev/sdb2</code></p>
+        <ul>Formatar a partição (tipo swap)</ul>
+        <p><code>wipefs -a /dev/sdb</code></p>
+        <ul>Destruir dados de partições</ul>
+        <p><code>gdisk /dev/sdb</code></p>
+        <ul>Lista de tipos de partição presentes</ul>
+        <ul>opção '?' para ajuda</ul>
+        <ul>opção 'o' para criar partição GPT</ul>
+        <ul>opção 'i' para listar depois</ul>
+        <ul>opção 'n' para nova partição</ul>
+        <ul>opção '1' para primeira partição (de 1 a 128)</ul> 
+        <ul>'2M' talvez para definir MBR</ul>
+        <ul>'400M' para definir tamanho do disco</ul>
+        <ul>opção 'L' para mostrar os códigos</ul>
+        <ul>'8200' para definir swap</ul>
+        <ul>opção 'w' para gravar alterações</ul>
+        <br>
+        <ul>continuando...</ul>
+        <br>
+        <p><code>fdisk -l /dev/sdb</code></p>
+        <ul>Para listar alterações em disco</ul>
+        <p><code>gdisk /dev/sdb</code></p>
+        <ul>opção 'b'</ul>
+        <ul>Salvar em 'tmp/backup.diskgpt' o backup do layout</ul>
+        <ul>opção 'v' para verificar disco se há problema </ul>
+        <ul>opção 'j' corrige espaço e ajuda no alinhamento</ul>
+        <ul>opção 'x' para modo expert</ul>
+        <ul>opção 'z' para destruir dados de partições (semelhante ao wipefs)</ul>
+        <ul>opção 'z' também zera o MBR</ul>
+        <ul>opção 's' faz mudança da tabela de partição (resize)</ul>
+        <ul>opção 'c' altera de MS-DOS para GUID</ul>
+        <ul>opção 'd' mostra valor de alinhamento da partição, corrige inconsistências entre número de setores e número inicial da partição</ul>
+        <ul>***** problema comum em storages onde você precisa calcular exatamente onde tem discos que são de 512 setores e outros de 4096 para melhorar performance</ul>
+        <p><code>parted /dev/sdb</code></p>
+        <ul>opção 'print' para listar partição</ul>
+        <p><code>wipefs -a /dev/sdb</code></p>
+        <ul>Destroi dados de partições</ul>
+        <p><code>parted /dev/sdb</code></p>
+        <ul>opção 'mklabel msdos' cria partição do tipo MS-DOS</ul>
+        <p><code>opção 'mkpart' cria partição</code></p>
+        <ul>exemplo: 'primary', 'ext4', '1', '402'</ul>
+        <ul>opção 'print'</ul>
+        <ul>***** Atenção: no momento que se executa as mudanças o parted salva no disco</ul>
+        <ul>opção 'set 1 boot on' para determinar que a partição será usada como boot da máquina</ul>
+        <ul>opção 'mkpart' para criar mais uma partição</ul>
+        <ul>exemplo: 'extended','403','603'</ul>
+        <h4>Como criar partição lógica dentro da partição extendida</h4>
+        <ul>opção 'mkpart'</ul>
+        <ul>exemplo: logical','sw','403','503','Ignore'</ul>
+        <ul>opção 'quit</ul>
+        <p><code>mkfs.ext3 /dev/sdb1</code></p>
+        <ul>Formata partição, cria journal e finaliza como ext3</ul>
+        <p><code>mkswap /dev/sdb5</code></p>
+        <ul>Formata partição swap</ul>
+        <p><code>parted /dev/sdb</code></p>
+        <ul>opção 'help'</ul>
+        <ul>opção 'help unit' traz detalhamento das opções que podem ser realizadas com unit</ul>
+        <ul>opção 'help mkpart' opções que podem ser utilizadas de tipos de sistemas de arquivos</ul>
+        <ul>opção 'unit s' altera tipo de unidade de medida</ul>
+        <ul>opção 'unit kB' para kilobytes</ul>
+        <ul>opção 'unit mB' para megabytes</ul>
+        <ul>opção 'rm' remove partição</ul>
+        <ul>exemplo: '5' remove partição 5, outro exemplo: '2' remove partição '2'</ul>
+        <br>
+        <p><code>cfdisk /dev/sdb</code></p>
+        <ul>Permite criar partições em modo MS-DOS e UEFI</ul>
+        <p><code>wipefs -a /dev/sdb</code></p>
+        <ul>Apaga partições</ul>
+        <p><code>cfdisk /dev/sdb</code></p>
+        <ul>Para iniciar novamente</ul>
+        <ul>opções: 
+        <li>'gpt' para HDs com mais de 2TB (obrigatório)</li>
+        <li>'dos' limitação a 2TB</li>
+        <li>'sgi'</li>
+        <li>'sun'</li>
+        <br>
+        <ul>opção 't' para alterar tipo de partição</ul>
+        <ul>digitar 'sim' para confirmar</ul>
+        <ul>opção 'd' de dump da partição é despejar</ul>
+        <ul>opção 'n' nova partição</ul>
+        <ul>Em 2023 há discos com 8TB</ul>
+        <ul>GPT tem limite de 1 Zetabyte</ul>
+        <br>
+        <p><code>mkswap /dev/sdb2</code></p>
+        <code>Para formatar disco como SWAP</code>
+        <br>
+        <p>UEFI: evolução do sistema BIOS</p>
+        <p>BIOS: código feito em Assembly que está incluído no EEPROM da máquina, procura SISTEMA MBR para o BOOT</p>
+        <p>XT, BMXT, 8080, 286, 386 ... AMDs®, PENTIUM® </p>
+        <p>POST: Power On Self Test, teste próprio para inicializar a máquina</p>
+        <ul>
+            <li>Teste rápido de memória</li>
+            <li>Inicializa a BIOS</li>
+            <li>Inicializa a parte de vídeo</li>
+            <li>Começa a pesquisar onde tem o sistema operacional nos discos</li>
+        </ul>
+        <p>O UEFI contém diversos programas em C, modularizados, cada um executa uma função diferente na inicialização. Consórcio entre Microsoft, Apple, IBM (2011 pra frente)</p>
+        <p>O BIOS tem limitação do cilindro 1024 do disco para criar partição</p>
+        <br>
+        <p>Continua ...</p>]
+        <br>
+        <p><code>wipefs -a /dev/sdb</code></p>
+        <ul>Apagar as partições</ul>
+        <p><code>cfdisk /dev/sdb</code></p>
+        <ul>opção 'gpt' obrigatório para UEFI</ul>
+        <ul>opção 'nova' para criar a partição de '1M'</ul>
+        <ul>opção 'tipo'</ul>
+        <ul>opção 'BIOS inicialização' para gravar o GRUB</ul>
+        <ul>opção 'nova' para criar a partição de '512M'</ul>
+        <ul>opção 'tipo'</ul>
+        <ul>opção 'sistema EFI' vai ser uma partição do tipo FAT do Windows</ul>
+        <ul>opção 'nova' para criar partição de '350M'</ul>
+        <ul>opção 'nova' para criar partição de '2G'</ul>
+        <ul>opção 'nova' para criar partição de '512M'</ul>
+        <ul>opção 'tipo'</ul>
+        <ul>opção 'linux swap'</ul>
+        <ul>opção 'gravar'</ul>
+        <ul>'sim'</ul>
+        <br>
+        <p><code>fdisk -l /dev/sdb</code></p>
+        <ul>Listar partições</ul>
+
+        <p>IMPORTANTE: a primeira partição é para não mexer. Serve para GRUB ou serve para inicialização modo legado. A segunda partição tem que ser FAT.</p>
+
+        <p><code>apt-get install dosfstools</code></p>
+        <ul>Para instalar o programa dosfstools</ul>
+        <p><code>mkfs.vfat /dev/sdb2</code></p>
+        <ul>Para formatar como FAT</ul>
+        <p><code>mkfs.ext3 /dev/sdb3</code></p>
+        <ul>Para formatar partição de boot como ext3</ul>
+        <p><code>mkfs.ext4 /dev/sdb4</code></p>
+        <ul>Para formatar partição raiz como ext4</ul>
+        <p><code>mkswap /dev/sdb5</code></p>
+        <ul>Para formatar partição SWAP</ul>
+    </section>
 </body>
 </html>
