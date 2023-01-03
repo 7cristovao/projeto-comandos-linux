@@ -1063,11 +1063,11 @@
         <ul>Exibe os programas em execução no segundo plano</ul>
         <p><code>fg 1</code></p>
         <ul>Traz o programa em execução para primeiro plano</ul>
-        <p>CTRL + Z<p>
+        <p><code>CTRL + Z</code><p>
         <ul>Pára o programa em execução</ul>
         <p><code>bg 1</code></p>
         <ul>Joga o programa em execução parado para segundo plano</ul>
-        <p>CTRL + C</p>
+        <p><code>CTRL + C</code></p>
         <ul>Mata execução do programa que está no primeiro plano</ul>
         <p><code>kill %1</code></p>
         <ul>Mata execução do programa que está no 'job 1'</ul>
@@ -1245,7 +1245,7 @@
         <ul>cd </ul>
         <p><code>cd ..</code></p>
         <ul>cd..</ul>
-        <p>cd /</p>
+        <p><code>cd /</code></p>
         <ul>cd\</ul>
         <p><code>date</code></p>
         <ul>date</ul>
@@ -1314,7 +1314,7 @@
         <ul>Lista as partições que estão no segundo disco</ul>
         <p><code>fdisk /dev/sdb</code></p>
         <ul>Entra no particionador para particionar o disco 'b'</ul>
-        <ul>opção 'p' para ver os discos<ul>
+        <ul>opção 'p' para ver os discos</ul>
         <ul>opção 'o' para criar um rótulo DOS com identificador</ul>
         <ul>opção 'n' para definir a partição</ul>
         <ul>Escolher o número da partição de '1', '2',',3' ou' '4'</ul>
@@ -1413,20 +1413,20 @@
         <p><code>mkswap /dev/sdb2</code></p>
         <code>Para formatar disco como SWAP</code>
         <br>
-        <p>UEFI: evolução do sistema BIOS</p>
-        <p>BIOS: código feito em Assembly que está incluído no EEPROM da máquina, procura SISTEMA MBR para o BOOT</p>
-        <p>XT, BMXT, 8080, 286, 386 ... AMDs®, PENTIUM® </p>
-        <p>POST: Power On Self Test, teste próprio para inicializar a máquina</p>
+        <p class="texto">UEFI: evolução do sistema BIOS</p>
+        <p class="texto">BIOS: código feito em Assembly que está incluído no EEPROM da máquina, procura SISTEMA MBR para o BOOT</p>
+        <p class="texto">XT, BMXT, 8080, 286, 386 ... AMDs®, PENTIUM® </p>
+        <p class="texto">POST: Power On Self Test, teste próprio para inicializar a máquina</p>
         <ul>
             <li>Teste rápido de memória</li>
             <li>Inicializa a BIOS</li>
             <li>Inicializa a parte de vídeo</li>
             <li>Começa a pesquisar onde tem o sistema operacional nos discos</li>
         </ul>
-        <p>O UEFI contém diversos programas em C, modularizados, cada um executa uma função diferente na inicialização. Consórcio entre Microsoft, Apple, IBM (2011 pra frente)</p>
-        <p>O BIOS tem limitação do cilindro 1024 do disco para criar partição</p>
+        <p class="texto">O UEFI contém diversos programas em C, modularizados, cada um executa uma função diferente na inicialização. Consórcio entre Microsoft, Apple, IBM (2011 pra frente)</p>
+        <p class="texto">O BIOS tem limitação do cilindro 1024 do disco para criar partição</p>
         <br>
-        <p>Continua ...</p>]
+        <p class="texto">Continua ...</p>
         <br>
         <p><code>wipefs -a /dev/sdb</code></p>
         <ul>Apagar as partições</ul>
@@ -1449,7 +1449,7 @@
         <p><code>fdisk -l /dev/sdb</code></p>
         <ul>Listar partições</ul>
 
-        <p>IMPORTANTE: a primeira partição é para não mexer. Serve para GRUB ou serve para inicialização modo legado. A segunda partição tem que ser FAT.</p>
+        <p class="texto">IMPORTANTE: a primeira partição é para não mexer. Serve para GRUB ou serve para inicialização modo legado. A segunda partição tem que ser FAT.</p>
 
         <p><code>apt-get install dosfstools</code></p>
         <ul>Para instalar o programa dosfstools</ul>
