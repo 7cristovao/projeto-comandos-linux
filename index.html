@@ -1,4 +1,4 @@
-<!-- versão 1.0.4 -->
+<!-- versão 1.0.5 -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -1463,6 +1463,261 @@
         <ul>Para formatar partição raiz como ext4</ul>
         <p><code>mkswap /dev/sdb5</code></p>
         <ul>Para formatar partição SWAP</ul>
+        <br>
+        <h4>Planejamento de Partições</h4>
+        <p class="texto">Debian / Ubuntu</p>
+        <br>
+        <p class="texto">Desktop</p>
+        <ul>
+            <li>/ (raiz) ter 20 Gb</li>
+            <li>/usr 15 Gb</li>
+            <li>/var 10 Gb</li>
+            <li>/home 500 Gb</li>
+            <li>swap 8 Gb (ter a mesma quantidade da RAM da máquina, para RAM menor que 4 Gb usar o tamanho da swap vezes 2)</li>
+        </ul>
+        <br>
+        <p class="texto">Desktop alternativo</p>
+        <ul>
+            <li>/ (raiz) 50 Gb</li>
+            <li>/ home 930 Gb</li>
+            <li>/ swap 8 Gb</li>
+        </ul>
+        <br>
+        <p class="texto">Servidor de emails</p>
+        <ul>
+            <li>/ (raiz) 20 Gb</li>
+            <li>/var 900 Gb</li>
+            <li>/home 5 Gb</li>
+            <li>swap 16 Gb</li>
+        </ul>
+        <br>
+        <p>Servidor de Arquivos</p>
+        <ul>
+            <li>/ (raiz) 20 Gb</li>
+            <li>/home 5 Gb</li>
+            <li>/data 900 Gb</li>
+            <li>swap 8 Gb</li>
+        </ul>
+        <p class="texto">Servidor Web</p>
+        <ul>
+            <li>/ (raiz) 200 Gb</li>
+            <li>/home 5 Gb</li>
+            <li>swap 8 Gb</li>
+            <li>/var 950 Gb (primeira opção: deixar só o '/var' na partição separada</li>
+            <br>
+            <li>/var/www (armazenamento comum)</li>
+            <li>/var/log (logs de acesso serviço web) (segunda opção: separar o log)</li>
+        </ul>
+        <br>
+        <p><code>du -sh *</code></p>
+        <ul>Verificar tamanho do sistema</ul>
+        <p><code>mkdir /tmp/mount_var</code></p>
+        <ul>Criar uma pasta para montar um sistema de arquivos</ul>
+        <p><code>mount /dev/sda6 /tmp/mount_var</code></p>
+        <ul>
+            <li>/dev/sdc1 é o dispositivo de origem</li>
+            <li>/tmp/mount_var é o ponto de montagem</li>
+        </ul>
+        <ul>Montar sistema de arquivos</ul>
+        <ul>Tornar a partição acessível para que se consiga usar</ul>
+        <ul>Migrar a partição lá para '/tmp/mount_var'</ul>
+        <ul>Observação: se o comando com a partição livre (exemplo desse caso é: /dev/sda6) não funcionar, procure uma partição livre em /dev/sda ou /dev/sdb e tente montar na partição livre</ul>
+        <ul>Observação: não funcionando, será necessário criar um hd virtual (ou espetar um hd físico) para poder aumentar a capacidade. Aí de /dev/sda6, mudou para /dev/sdc1</ul>
+        <ul>Observação: é necessário particionar e depois formatar o dispositivo</ul>
+        <p><code>df -hT</code></p>
+        <ul>Verificar dispositivos montados (discos)</ul>
+        <br>
+        <h4>Como fazer a migração de uma partição que está estourando</h4>
+        <p><code>cd /var</code></p>
+        <p><code>du -hs</code></p>
+        <ul>Checar a ocupação da pasta</ul>
+        <ul>Está estourando quero migrar para outra partição. Como fazer?</ul>
+        <p><code>cd /tmp/mount_var</code></p>
+        <ul>Entra na partição destino</ul>
+        <p><code>cp -a /var/* /tmp/mount_var</code></p>
+        <ul>***** Copia o conteúdo da pasta sem copiar o nome da pasta</ul>
+        <ul>Atributo '-a' serve para preservar os atributos do comando cp</ul>
+        <p><code>ls /var</code></p>
+        <ul>Para verificar se o conteúdo está idêntico ao que estava no dispositivo anterior... caso sem querer você apague um 'lost+found'...</ul>
+        <p><code>mklost+found</code></p>
+        <p class="texto">Sistemas de hoje em dia (2023) ext4, reizerfs, btrfs, xfs</p>
+        <p class="texto">Sistema de proteção extended e outros</p>
+        <p class="texto">ext4 tem limite de partição de 1 Exabyte</p>
+        <p class="texto">Conceito de barriers</p>
+        <br>
+        <p><code>nano /etc/fstab</code></p>
+        <ul>
+            <li>***** Operação que envolve montagem de arquivos é gerenciada por aqui</li>
+            <li>Dentro do arquivo '/etc/fstab' os campos são separados por espaço na mesma linha</li>
+            <li>O primeiro campo é o dispositivo de origem &lt;file system&gt;</li>
+            <ul>Exemplo: '/dev/sdc1'</ul>
+            <li>O segundo campo é o ponto de montagem &lt;mount point&gt;</li>
+            <ul>Exemplo: '/var'</ul>
+            <li>O terceiro parâmetro é o tipo do sistema de arquivo &lt;type&gt;</li>
+            <ul>Exemplo: 'ext4</ul>
+            <li>O quarto parâmetro são as opções do ponto de montagem &lt;type&gt;</li>
+            <ul>Exemplo: 'defaults'</ul>
+            <li>O quinto campo é para usar ou não o sistema de backup &lt;dump&gt;</li>
+            <ul>Exemplo: '0'</ul>
+            <li>O sexto campo é o passo de verificação de sistema de arquivos, se ele corromper vai montar do mesmo jeito corrompido, não vai fazer checagem nenhuma, vai passar adiante, opção 1 faz checagem no boot</li>
+            <ul>Exemplo: '1'</ul>
+            <ul>Salvar e sair do arquivo</ul>
+        </ul>
+        <p><code>reboot</code></p>
+        <ul>Reinicia a máquina</ul>
+        <p><code>df -hT</code></p>
+        <ul>Verificar onde (e se) o /var está montado em '/dev/sdc1'</ul>
+        <p><code>reboot</code></p>
+        <ul>Reinicia</ul>
+        <ul>
+            <li>Loga novamente</li>
+            <li>Edita o '/etc/fstab', desativando/comentando a linha do dispositivo '/dev/sdc1'</li>
+            <li>Salva e sai</li>
+        </ul>
+        <p><code>touch /var/particao_nova</code></p>
+        <p>reboot</p>
+        <ul>Reinicia a máquina para verificar que o '/var' voltou na configuração antiga e o arquivo partição_nova não existe mais</ul>
+        <p><code>ls /var</code></p>
+        <ul>Para ver que o arquivo 'particao_nova' não está mais lá</ul>
+        <p><code>mount /dev/sdc1 /mnt</code></p>
+        <ul>Monta dispositivo em '/mnt' que é o ponto de montagem temporário do sistema de arquivos</ul>
+        <p><code>cd /mnt</code></p>
+        <p><code>ls</code></p>
+        <ul>Vai aparecer o arquivo 'particao_nova' lá</ul>
+        <br>
+        <p class="texto">Como fazer para recuperar o arquivo que estava sendo utilizado no '/var' anteriormente</p>
+        <p><code>nano /etc/fstab</code></p>
+        <ul>Para editar o arquivo</ul>
+        <ul>Descomentar a linha para que ele monte novamente no boot</ul>
+        <p><code>cd /var</code></p>
+        <ul>Para acessar a pasta</ul>
+        <p><code>rm -rf *</code></p>
+        <ul>É uma operação segura</ul>
+        <p><code>df -hT</code></p>
+        <ul>Atenção: como foi descomentado o '/etc/fstab', no momento do reboot da máquina e ele iniciar novamente o sistema, ele vai montar o conteúdo de '/dev/sdc1' em '/var' e lá eu vou ter esse conteúdo do '/var' que havia sido copiado anteriormente, chamado de <u>sistema à quente do sistema de partições</u></ul>
+        <ul>Funciona com '/var' e outras partições, mas não funciona tão bem no '/usr', porque no '/usr' existe os links simbólicos do '/lib', '/lib32', '/lib64','/libx32' que apontam para o '/usr'</ul>
+        <ul>Se eu quiser remover o conteúdo do '/usr', tem que remover algumas partições apenas e não remover essa '/lib32', '/lib64' e o '/bin'. Se não o sistema fica inutilizado. Se ele remover as bibliotecas do linux, não vai ser possível dar o boot na máquina.</ul>
+        <ul>No '/usr' se você quiser utilizar o sistema a quente de partição, vocẽ vai poder remover a '/usr/games', vai poder remover '/usr/includes', a '/usr/share', a '/usr/local' e a '/usr/src'</ul>
+        <ul>Não pode remover as pastas 'bin' e a 'lib'.</ul>
+        <ul>Atenção: se você remover as pastas 'bin' ou a 'lib' a máquina fica inutilizável na hora porque de utilitários não vão funcionar mais</ul>
+        <p><code>reboot</code></p>
+        <ul>ATENÇÃO: deixar reiniciar sem apertar o botão de desligar a máquina</ul>
+        <p><code>df -hT</code></p>
+        <ul>Verifica onde o '/var' está montado. Fim.</ul>
+        <br>
+        <h3>Outras opções do '/etc/fstab'</h3>
+        <p><code>nano /etc/fstab</code></p>
+        <ul>Opções de '&lt;options&gt;':
+            <li>'defaults'</li>
+            <li>'noatime' para não atualizar o acess time dos arquivos, reduz muito a gravação do sistema de arquivos</li>
+            <li>Interessante para colocar em sistemas de ponto de montagem de partições movimentadas como '/var' e servidores de e-mails, servidores de arquivos caso não precise desse nível de auditoria.</li>
+            <li>'nodiratime' mesma coisa que o atime só que isso serve para diretórios</li>
+            <li>'norelatime' é a mesma coisa para arquivos, só que funciona para inodes</li>
+            <li>Se você utilizar o 'noatime' utilize o 'norelatime' porque senão não vai fazer tanto sentidd ele você colocar o mesmo tempo de acesso do arquivo e os inodes continuarem a ser atualizados, então utilize 'norelatime' também</li>
+            <li>'noexec' qualquer binário que tiver na partição '/var' ele não tem a permissão de execução</li>
+        </ul>
+        <p><code>df -h</code></p>
+        <ul>Mostra que não muda nada</ul>
+        <p><code>mount</code></p>
+        <ul>E procurar atentamente o dev onde tem a linha sdc1 vai ser visto que na linha se tem o '/dev/sdc1/var' do tipo 'ext4' e tem as opções 'noatime','noexec','nodiratime'</ul>
+        <p><code>cd /var</code></p>
+        <p><code>ls</code></p>
+        <p><code>cp /bin/ls /var/tmp</code></p>
+        <p><code>cd /var/tmp</code></p>
+        <p><code>ls</code></p>
+        <p><code>./ls</code></p>
+        <ul>Lista direto da pasta. Vai aparecer permissão negada.</ul>
+        <ul>Aconteceu porque foi montado o sistema de arquivos com a opção 'noexec'</ul>
+        <p><code>ls -la ls</code></p>
+        <p><code>nano '/etc/fstab'</code></p>
+        <ul>Entrar no arquivo para retirar a restrição de 'noexec'</ul>
+        <p><code>mount -o remount /var</code></p>
+        <p><code>./ls</code></p>
+        <ul>Execute o ls. Agora ele funciona.</ul>
+        <ul>Porque foi atribuído ao '/var' para ele executar binários</ul> 
+        <h3>Outras opções do '/etc/fstab', incluí-las</h3>
+        <ul>
+            <li>'nosuid','nodev'</li>
+            <li>Salvar o arquivo</li>
+            <li>Testar</li>
+        </ul>
+        <p><code>mount -o remount /var</code></p>
+        <ul>Vai ler o '/etc/fstab'</ul>
+        <ul>Vai ver as novas opções do '/var' e vai aplicar</ul>
+        <p><code>./ls</code></p>
+        <ul>Tenta listar para ver que minhas opções tiveram efeito</ul>
+        <p><code>mount | grep var</code></p>
+        <ul>Para ver se as permissões foram aplicadas</ul>
+        <p><code>cp -a /dev/null</code></p>
+        <p><code>ls -la</code></p>
+        <ul>O '/dev/null' é um dispositivo especial que tudo que você copia para ele some</ul>
+        <ul>Exemplo:</ul>
+        <p><code>echo "teste" > /dev/null</code></p>
+        <p><code>echo "teste" > /var/tmp/null</code></p>
+        <ul>Vai dar permissão negada para quem tem 'nodev' em '/etc/fstab'</ul>
+        <ul>Fazer o mesmo teste para:</ul>
+        <p><code>cp /dev/null /tmp</code></p>
+        <p><code>echo "teste > /tmp/null</code></p>
+        <ul>Para esse caminho ele foi</ul>
+        <ul>Diz pro kernel o seguinte: "quero que esse dispositivo seja associado a minha área nula"</ul>
+        <ul>Remove 'nodev' do '/etc/fstab'. Salva e sai.</ul>
+        <p><code>mount | grep var</code></p>
+        <ul>Para verificar se o 'nodev' foi removido</ul>
+        <p><code>echo "teste" > /var/tmp/null</code></p>
+        <p class="texto">Opções de montagem são muito importantes, porque controla o aspecto das permissões e do nível de segurança que vai ter em casa partição da máquina. Útil em servidores mas você pode usar em desktop.</p>
+        <p><code>mount -o remount,rw /var</code></p>
+        <ul>Serve para remontar o sistema de arquivos como leitura e gravação</ul>
+        <p><code>mount -o remount,ro /var</code></p>
+        <ul>Remonta o sistema de arquivos como somente leitura, mas ele não vai permitir porque tá ocupado fazendo gravação</ul>
+        
+        <h3>Procedimento para ver o que está ocupando o '/var'</h3>
+        <p><code>apt-get install lsof</code></p>
+        <ul>Para instalar o lsof</ul> 
+        <ul>Se houver erro de permissão negada, ver em '/etc/fstab' se a opção 'noexec' está lá em '/var'</ul>
+        <p><code>lsof</code></p>
+        <ul>***** Lista todos os arquivos que estão carregados na máquina e estão em uso.</ul>
+        <p><code>lsof -t /var</code></p>
+        <ul>Para especificar o que está em uso</ul>
+        <p><code>ps ax | grep PID</code></p>
+        <ul>Checar quem está utilizando a PID</ul>
+        <p><code>systemctl stop rsyslog</code></p>
+        <p><code>systemctl stop syslog.socket rsyslog.service</code></p>
+        <ul>Usar esse caso não funcionar o de cima</ul>
+        <p><code>systemctl stop glustered</code></p>
+        <ul>Exceção: quando há muitos processos abertos:</ul>
+        <p><code>systemctl list-unit-files</code></p>
+        <ul>Para listar os serviços</ul>
+        <p><code>kill PID1 PID2 PIDn</code></p>
+        <ul>Para encerrar outros serviços</ul>
+        <p><code>mount -o remount,ro /var</code></p>
+        <p><code>kill -9 PID</code></p>
+        <ul>Nos processos que não deixam umount funcionar</ul>
+        <p><code>umount /var</code></p>
+        <ul>Para desmontar a pasta</ul>
+        <p><code>ls</code></p>
+        <p><code>ls /var</code></p>
+        <p><code>df</code></p>
+        <p><code>mount /var</code></p>
+        <ul>Se já estiver montada, senão usar o comando abaixo</ul>
+        <p><code>mount -o remount,ro /var</code></p>
+        <p><code>cd /var</code></p>
+        <p><code>ls</code></p>
+        <p><code>cd /var</code></p>
+        <p><code>ls</code></p>
+        <p><code>cd /tmp</code></p>
+        <br>
+        <p class="texto">
+            <ul>Partições:
+                <li>MS-DOS 2 Tb</li>
+                <li>GPT 1 Zb</li>
+            </ul>
+        </p>
+        <p class="texto">Sistemas de Arquivos:
+            <ul>
+                <li>ext2: 2 Tb - 16 Tb Max. Part.; 65536 número de blocos limite; máximo de um arquivo são 16 Gb</li>
+                <li>ext3: 2 Tb - 32 Tb Max. Part.; 65536 número de blocos limite; máximo de um arquivo são 16 Gb - 2 Tb</li>
+                <li>ext4: 1 Eb; 65536 número de blocos limite; máximo de um arquivo são 16 Tb para blocos de 4k</li>
+            </ul>
     </section>
 </body>
 </html>
