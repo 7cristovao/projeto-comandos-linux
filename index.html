@@ -1,4 +1,4 @@
-<!-- versão 1.0.6 -->
+<!-- versão 1.0.7 -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -1718,6 +1718,109 @@
                 <li>ext3: 2 Tb - 32 Tb Max. Part.; 65536 número de blocos limite; máximo de um arquivo são 16 Gb - 2 Tb</li>
                 <li>ext4: 1 Eb; 65536 número de blocos limite; máximo de um arquivo são 16 Tb para blocos de 4k</li>
             </ul>
+    </section>
+    <section id="Setima_parte">
+        <h2>Sétima parte</h2>
+        <h3>Hardware</h3>
+        <h4>Arquiteturas</h4>
+        <ul>
+            <li>ISA 8 bits</li>
+            <li>ISA 16 bits</li>
+            <li>VESA</li>
+            <li>PCI</li>
+            <li>AGP</li>
+            <li>PCI express</li>
+            <li>DOS Channel em RAM</li>
+        </ul>
+        <p class="texto">ACPI</p>
+        <ul>Comandos para desligar a máquina via rede</ul>
+        <h4>I/O, DMA e IRQ (interrupções)</h4>
+        <ul>Plug and play, jumpers, COM1, COM2, COM3, COM4</ul>
+        <p><code>cd /proc</code></p>
+        <ul>Para entrar na pasta do File System Virtual, informação sobre a máquina, benchmarking</ul>
+        <p><code>cat /proc/interrupts | less</code></p>
+        <ul>***** Ver interrupções de hardware</ul>
+        <ul>APIC (gerenciamento avançado de interrupções)</ul>
+        <ul>
+            <li>0: timer do sistema, 'timer'</li>
+            <li>8: real time clock, 'rtc0'</li>
+            <li>9: ponte com ACPI, comunicação com todos os dispositivos</li>
+            <li>20: comunicação com VirtualBox, 'vboxguest'</li>
+            <li>18: 'vmwgfx', parte gráfica, comunicação com VirtualBox</li>
+        </ul>
+        <p><code>cat /proc/ioports | less</code></p>
+        <ul>Ver portas de entrada e saída de interrupções de hardware</ul>
+        <ul>'dma' é o timer</ul>
+        <ul>'ata_piix' é o HD tanto SATA, IDE, SSD e M2</ul>
+        <ul>'vga+' é a comunicação com a placa de vídeo</ul>
+        <ul>'e1000' é um driver de placa de rede</ul>
+        <p><code>cat /proc/dma | less</code></p>
+        <ul>DMA (Acesso Direto à Memória)</ul>
+        <ul>HARDWARE &lt; ioports / comunicação &gt; PROCESSADOR &lt; interrupts / endereçamento &gt; DISPOSITIVO</ul>
+        <p><code>apt-get install irqtop</code></p>
+        <p><code>irqtop</code></p>
+        <ul>Usar quando perceber que o uso de interrupções está muito alto em sua máquina</ul>
+        <br>
+        <p><code>lspci</code></p>
+        <ul>Lista todos os periféricos que estão nos barramentos PCI do sistema</ul>
+        <p><code>lsusb</code></p>
+        <ul>Lista todos os USB conectados (também serve para máquina virtual)</ul>
+        <p><code>lspci -vv</code></p>
+        <ul>Obtem detalhes de configuração de hardware: I/O ports, região de memória, frequência que ele opera, módulo do Kernel</ul>
+        <p><code>lshw</code></p>
+        <ul>Lista hardwares (dados profundos)</ul>
+        <ul>***** Escolher SSD(M2)</ul>
+        <p><code>ls -la /lib/firmware</code></p>
+        <ul>Lista firmwares que estão instaladas junto ao sistema operacional (drivers)</ul>
+        <p><code>nano /etc/apt/sources.list</code></p>
+        <ul>Arquivo que contém quais são os servidores que o sistema vai obter a lista de pacotes para que ele consiga pesquisar e instalar no sistema</ul>
+        <ul>Repositórios</ul>
+        <p><code>apt-cache search firmware-linux-nonfree</code></p>
+        <p><code>apt-get install firmware-linux-free</code></p>
+        <p><code>nano /etc/apt/sources.list</code></p>
+        <ul>Editar a linha: deb http://deb.debian.org/debian/ buster main contrib non-free</ul>
+        <p><code>apt-get update</code></p>
+        <ul>Atualiza</ul>
+        <ul>Exemplo: além de outros pacotes, ele traz o microcode, que permite aplicar patches na cpu em tempo de execução a cada boot</ul>
+        <p><code>ls -la /lib/firmware</code></p>
+        <ul>Para listar e conferir os drivers que foram instalados</ul>
+        <p><code>apt-cache search firmware</code></p>
+        <ul>Lista todos os pacotes que tenham a palavra firmware</ul>
+        <p><code>apt-get install firmware-iwiwifi firmware-atheros firmware-misc-nonfree firmware-realtek</code></p>
+        <ul>Instalar firmware wifi (exemplo)</ul>
+        <ul>Ele vai re-gerar o initrun.fs que é o init.rd do kernel</ul>
+        <p><code>dmesg</code></p>
+        <ul>Ver informações do sistema</ul>
+        <p><code>lspci</code></p>
+        <ul>Baixar o driver de packages.debian.org</ul>
+        <ul>Montar o pendrive na máquina</ul>
+        <p><code>dpkg -i *.deb</code></p>
+        <ul>Instalar manualmente um programa</ul>
+        <ul>Instala diretamente do pacote</ul>
+        <br>
+        <h4>ACPI</h4>
+        <ul>
+            <li>Padrão que permite a gerência mais efetiva da energia do dispositivo</li>
+            <li>Gerência de recursos e utilização mais eficiente da interação entre processador e hardwares dos recursos que eles possuem</li>
+            <li>Economia de energia</li>
+            <li>Gerenciamento de desempenho</li>
+            <li>Gerenciamento de suspensão de dispositivos</li>
+        </ul>
+        <p><code>apt-get install acpid</code></p>
+        <p><code>acpid</code></p>
+        <ul>Controle e monitoramento do ACPI na máquina</ul>
+        <p><code>ls /etc/acpi/events</code></p>
+        <ul>Aqui há scripts relacionados a eventos no ACPI</ul>
+        <p><code>less powerbtn-acpi-support</code></p>
+        <ul>Executa esse script de ACPI</ul>
+        <p><code>cd ..</code></p>
+        <p><code>less powerbtn-acpi-support.sh</code></p>
+        <ul>Checa se existe o /etc/acpi/powerbtn.sh</ul>
+        <ul>Se tiver ele vai dizer que o ACPI não está gerenciando o portão power</ul>
+        <ul>Caso contrário exibir "power button pressed"</ul>
+        <p><code>nano /etc/systemd/logind.conf</code></p>
+        <ul>Gerencia recursos de desligamento da máquina</ul>
+        <ul>Exemplo: 'HandlePowerKey=ignore','HandleSuspendKey=suspend'</ul>
     </section>
 </body>
 </html>

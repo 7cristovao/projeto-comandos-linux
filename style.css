@@ -1,4 +1,4 @@
-/* versão 1.0.6 */
+/* versão 1.0.7 */
 @font-face {
     font-family: LeagueSpartan-Bold;
     src: url(./fonts/LeagueSpartan-Bold.otf);
@@ -27,7 +27,6 @@ ul{
     color: white;
     margin-left: 30px;
 }
-
 .texto{
     padding: 0px;
     font-family: 'Jura-DemiBold', Arial, Helvetica, sans-serif;
